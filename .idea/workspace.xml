@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7f5e23aa-3003-44d5-879a-ca227b4a10d5" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="ProjectId" id="1hixWOobQ3gbQekLRVZHVbDiOPN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/LocalSettings2.php" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/LocalSettings2.php" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7f5e23aa-3003-44d5-879a-ca227b4a10d5" name="Default Changelist" comment="" />
+      <created>1600507744647</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600507744647</updated>
+      <workItem from="1600507745707" duration="4227000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="100" y="115" width="1720" height="857" key="DiffContextDialog" timestamp="1600511573580">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="100" y="115" width="1720" height="857" key="DiffContextDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1600511573580" />
+    <state x="746" y="309" width="424" height="495" key="FileChooserDialogImpl" timestamp="1600511422946">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="746" y="309" width="424" height="495" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1600511422946" />
+    <state x="100" y="119" width="1720" height="857" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1600511972210">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="100" y="119" width="1720" height="857" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1600511972210" />
+  </component>
+</project>
