@@ -10,4 +10,9 @@
 
 # LocalSettings.php
 - enableSemantics(); (lokal)
-- docker-compose exec mediawiki maintenance/update.php
+- docker-compose exec mediawiki maintenance/update.php --quick
+
+# Skin
+- https://github.com/jthingelstad/foreground
+- wfLoadSkin( 'foreground' );
+- $wgDefaultSkin = "foreground";<

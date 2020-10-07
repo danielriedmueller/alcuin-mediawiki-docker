@@ -116,14 +116,14 @@ $wgDiff3 = "/usr/bin/diff3";
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, ie 'vector', 'monobook':
-$wgDefaultSkin = "vector";
+$wgDefaultSkin = "chameleon";
 
-# Enabled skins.
-# The following skins were automatically enabled:
+# Enabled skins_bkp.
+# The following skins_bkp were automatically enabled:
 wfLoadSkin( 'MonoBook' );
 wfLoadSkin( 'Timeless' );
 wfLoadSkin( 'Vector' );
-
+wfLoadSkin( 'chameleon' );
 
 # Enabled extensions. Most of the extensions are enabled by adding
 # wfLoadExtension( 'ExtensionName' );
@@ -134,6 +134,7 @@ wfLoadExtension( 'CodeEditor' );
 wfLoadExtension( 'SemanticMediaWiki' );
 wfLoadExtension( 'VisualEditor' );
 wfLoadExtension( 'WikiEditor' );
+wfLoadExtension( 'Bootstrap' );
 
 
 # End of automatically generated settings.

@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f5e23aa-3003-44d5-879a-ca227b4a10d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+    <list default="true" id="7f5e23aa-3003-44d5-879a-ca227b4a10d5" name="Default Changelist" comment="skins">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LocalSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/LocalSettings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/skins/foreground" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +36,11 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/LocalSettings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/skins" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -49,7 +59,7 @@
       <workItem from="1600757330645" duration="7000" />
       <workItem from="1600761096966" duration="10000" />
       <workItem from="1600762454429" duration="1547000" />
-      <workItem from="1602054351937" duration="701000" />
+      <workItem from="1602054351937" duration="4670000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1600512001432</created>
@@ -58,21 +68,82 @@
       <option name="project" value="LOCAL" />
       <updated>1600512001432</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="init">
+      <created>1602055158403</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1602055158404</updated>
+    </task>
+    <task id="LOCAL-00003" summary="skins">
+      <created>1602056920856</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602056920856</updated>
+    </task>
+    <task id="LOCAL-00004" summary="skins">
+      <created>1602056961754</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602056961754</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="skins" />
+    <option name="LAST_COMMIT_MESSAGE" value="skins" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="559" y="116" width="797" height="890" key="CommitChangelistDialog2" timestamp="1600512001306">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="2665" y="122" width="802" height="886" key="CommitChangelistDialog2" timestamp="1602056961407">
+      <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="559" y="116" width="797" height="890" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1600512001306" />
+    <state x="2665" y="122" width="802" height="886" key="CommitChangelistDialog2/4480.0.1920.1080/1920.0.2560.1440/0.27.1920.1053@1920.0.2560.1440" timestamp="1602056961407" />
     <state x="100" y="111" width="1720" height="857" key="DiffContextDialog" timestamp="1600673990063">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
