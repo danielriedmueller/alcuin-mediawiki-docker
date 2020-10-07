@@ -1,0 +1,29 @@
+version: '3'
+
+volumes:
+  mariadb_data:
+    driver: local
+  mediawiki_data:
+    driver: local
+
+services:
+  mediawiki:
+    build: ./
+    restart: always
+    ports:
+      - 80:80
+    depends_on:
+      - mariadb
+    volumes:
+      - /var/www/html/images
+      # After initial setup, download LocalSettings.php to the same directory as
+      # this yaml and uncomment the following line and use compose to restart
+      # the mediawiki service
+      - ./LocalSettings.php:/var/www/html/LocalSettings.php
+  mariadb:
+    image: mariadb:latest
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=mediawiki

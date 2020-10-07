@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7f5e23aa-3003-44d5-879a-ca227b4a10d5" name="Default Changelist" comment="" />
+    <list default="true" id="7f5e23aa-3003-44d5-879a-ca227b4a10d5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LocalSettings.php" beforeDir="false" afterPath="$PROJECT_DIR$/LocalSettings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,6 +15,9 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1hixWOobQ3gbQekLRVZHVbDiOPN" />
   <component name="ProjectViewState">
@@ -18,8 +27,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/LocalSettings2.php" />
-    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/LocalSettings2.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/LocalSettings.php" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -30,24 +40,62 @@
       <option name="presentableId" value="Default" />
       <updated>1600507744647</updated>
       <workItem from="1600507745707" duration="4227000" />
+      <workItem from="1600511981904" duration="2447000" />
+      <workItem from="1600527214636" duration="2424000" />
+      <workItem from="1600531477316" duration="332000" />
+      <workItem from="1600586512898" duration="2581000" />
+      <workItem from="1600670657312" duration="3773000" />
+      <workItem from="1600687888472" duration="331000" />
+      <workItem from="1600757330645" duration="7000" />
+      <workItem from="1600761096966" duration="10000" />
+      <workItem from="1600762454429" duration="1547000" />
+      <workItem from="1602054351937" duration="701000" />
     </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1600512001432</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600512001432</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="100" y="115" width="1720" height="857" key="DiffContextDialog" timestamp="1600511573580">
+    <state x="559" y="116" width="797" height="890" key="CommitChangelistDialog2" timestamp="1600512001306">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="100" y="115" width="1720" height="857" key="DiffContextDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1600511573580" />
-    <state x="746" y="309" width="424" height="495" key="FileChooserDialogImpl" timestamp="1600511422946">
+    <state x="559" y="116" width="797" height="890" key="CommitChangelistDialog2/0.27.1920.1053@0.27.1920.1053" timestamp="1600512001306" />
+    <state x="100" y="111" width="1720" height="857" key="DiffContextDialog" timestamp="1600673990063">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="746" y="309" width="424" height="495" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1600511422946" />
-    <state x="100" y="119" width="1720" height="857" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1600511972210">
+    <state x="100" y="111" width="1720" height="857" key="DiffContextDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1600673990063" />
+    <state x="746" y="305" width="424" height="495" key="FileChooserDialogImpl" timestamp="1600673965603">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="100" y="119" width="1720" height="857" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1600511972210" />
+    <state x="746" y="305" width="424" height="495" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1600673965603" />
+    <state x="100" y="107" width="1720" height="857" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1600761106505">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="100" y="107" width="1720" height="857" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1600761106505" />
+    <state x="573" y="169" width="770" height="784" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1600531678605">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="573" y="169" width="770" height="784" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1600531678605" />
+    <state x="770" y="467" width="375" height="179" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600531675528">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="770" y="467" width="375" height="179" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.27.1920.1053@0.27.1920.1053" timestamp="1600531675528" />
+    <state x="688" y="462" width="540" height="182" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1600671189443">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="688" y="462" width="540" height="182" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1600671189443" />
   </component>
 </project>
