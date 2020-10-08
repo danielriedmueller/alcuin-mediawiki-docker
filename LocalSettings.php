@@ -135,8 +135,11 @@ wfLoadExtension( 'SemanticMediaWiki' );
 wfLoadExtension( 'VisualEditor' );
 wfLoadExtension( 'WikiEditor' );
 wfLoadExtension( 'Bootstrap' );
-
+wfLoadExtension( 'PageForms' );
 
 # End of automatically generated settings.
 # Add more configuration options below.
 enableSemantics();
+
+# Customizations
+include 'customizations/LoadAssets.php';
