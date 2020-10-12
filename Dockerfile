@@ -1,4 +1,4 @@
-FROM mediawiki
+FROM mediawiki:latest
 
 # Install php extensions
 RUN apt-get update && apt-get install -y \
