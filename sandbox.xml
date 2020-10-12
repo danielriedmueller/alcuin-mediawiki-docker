@@ -1,0 +1,917 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.9/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.9/ http://www.mediawiki.org/xml/export-0.9.xsd" version="0.9" xml:lang="en">
+    <siteinfo>
+        <sitename>sandbox</sitename>
+        <dbname>sandbox</dbname>
+        <base>http://localhost:8080/sandbox/index.php/Main_Page</base>
+        <generator>MediaWiki 1.24.1</generator>
+        <case>first-letter</case>
+        <namespaces>
+            <namespace key="-2" case="first-letter">Media</namespace>
+            <namespace key="-1" case="first-letter">Special</namespace>
+            <namespace key="0" case="first-letter" />
+            <namespace key="1" case="first-letter">Talk</namespace>
+            <namespace key="2" case="first-letter">User</namespace>
+            <namespace key="3" case="first-letter">User talk</namespace>
+            <namespace key="4" case="first-letter">Sandbox</namespace>
+            <namespace key="5" case="first-letter">Sandbox talk</namespace>
+            <namespace key="6" case="first-letter">File</namespace>
+            <namespace key="7" case="first-letter">File talk</namespace>
+            <namespace key="8" case="first-letter">MediaWiki</namespace>
+            <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+            <namespace key="10" case="first-letter">Template</namespace>
+            <namespace key="11" case="first-letter">Template talk</namespace>
+            <namespace key="12" case="first-letter">Help</namespace>
+            <namespace key="13" case="first-letter">Help talk</namespace>
+            <namespace key="14" case="first-letter">Category</namespace>
+            <namespace key="15" case="first-letter">Category talk</namespace>
+            <namespace key="102" case="first-letter">Property</namespace>
+            <namespace key="103" case="first-letter">Property talk</namespace>
+            <namespace key="104" case="first-letter">Type</namespace>
+            <namespace key="105" case="first-letter">Type talk</namespace>
+            <namespace key="108" case="first-letter">Concept</namespace>
+            <namespace key="109" case="first-letter">Concept talk</namespace>
+        </namespaces>
+    </siteinfo>
+    <page>
+        <title>MediaWiki:Smw import foaf</title>
+        <ns>8</ns>
+        <id>24</id>
+        <revision>
+            <id>86</id>
+            <parentid>85</parentid>
+            <timestamp>2015-01-20T15:13:32Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="363">http://xmlns.com/foaf/0.1/|[http://www.foaf-project.org/ Friend Of A Friend]
+ age|Type:Text
+ Agent|Category
+ depiction|Type:URL
+ gender|Type:Text
+ homepage|Type:URL
+ knows|Type:Page
+ mbox|Type:Email
+ mbox_sha1sum|Type:Text
+ member|Type:Text
+ name|Type:Text
+ Organization|Category
+ Person|Category
+ phone|Type:Text
+
+[[Category:Vocabulary import]] [[Category:Foaf]]</text>
+            <sha1>1f69l88p3hxob52p9pmcok6co69ay8h</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Template:Welcome</title>
+        <ns>10</ns>
+        <id>20</id>
+        <revision>
+            <id>143</id>
+            <parentid>67</parentid>
+            <timestamp>2015-01-20T16:28:20Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="786">&lt;noinclude&gt;[[Category:Template]]&lt;/noinclude&gt;&lt;includeonly&gt;&lt;div style=&quot;padding:0.3em 0.5em 0.3em 0.5em; border-style:solid; border-width:medium; border: solid rgb(196, 214, 244); background-color: #F0F0F0;&quot;&gt;__INDEX____NOTOC____NOEDITSECTION__&lt;div style=&quot;font-size: 1.8em;&quot;&gt;Welcome&lt;/div&gt;
+
+&lt;span&gt;This &quot;sandbox&quot; allows you to carry out experiments and to try your &quot;Semantic MediaWiki&quot; skills.&lt;/span&gt;
+
+If you are looking for information about Semantic MediaWiki, see [[Has Url::https://www.semantic-mediawiki.org]].
+
+''Please do not add material that is any way offensive, that is copyrighted, or that is at all libelous. Content added here will not stay permanently; this page is cleared regularly.''
+
+A list of available extensions can be found [[Special:Version|here]].&lt;/div&gt;&lt;/includeonly&gt;</text>
+            <sha1>mb745igs70funvyj7k44y2swlvwrh8o</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has description</title>
+        <ns>102</ns>
+        <id>23</id>
+        <revision>
+            <id>58</id>
+            <timestamp>2015-01-20T14:30:43Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <comment>Created page with &quot;[[Has type::Text]] [[Has description::Simple descriptive explanatory text property.]] [[Category:Lorem ipsum]]&quot;</comment>
+            <text xml:space="preserve" bytes="110">[[Has type::Text]] [[Has description::Simple descriptive explanatory text property.]] [[Category:Lorem ipsum]]</text>
+            <sha1>b42c8f0b2b9rju3cclyei6nktl4cjb6</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has average rainy days</title>
+        <ns>102</ns>
+        <id>35</id>
+        <revision>
+            <id>121</id>
+            <timestamp>2015-01-20T15:54:27Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <comment>Created page with &quot;The [[Has type::number]] of days it rains (on average) in one year. To be used in city pages. [[Category:sample pages]]&quot;</comment>
+            <text xml:space="preserve" bytes="119">The [[Has type::number]] of days it rains (on average) in one year. To be used in city pages.
+[[Category:sample pages]]</text>
+            <sha1>6pqrfg98fbnxzwy1jmfn43e5w7ivfsu</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has coordinates</title>
+        <ns>102</ns>
+        <id>32</id>
+        <revision>
+            <id>113</id>
+            <timestamp>2015-01-20T15:47:56Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <comment>Created page with &quot;This attribute describes the [[Has type::Geographic coordinate|geographic coordinate]] of some place.  [[Category:Sample pages]]&quot;</comment>
+            <text xml:space="preserve" bytes="128">This attribute describes the [[Has type::Geographic coordinate|geographic coordinate]] of some place.
+
+[[Category:Sample pages]]</text>
+            <sha1>5b2ydypntli98t6gc5swfvbfkcftd4l</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has population</title>
+        <ns>102</ns>
+        <id>36</id>
+        <revision>
+            <id>126</id>
+            <parentid>125</parentid>
+            <timestamp>2015-01-20T15:57:13Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="46">[[Has type::Number]] [[Category:Sample pages]]</text>
+            <sha1>85aryaklohmqvactrvhpi2a0n9i4e6m</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has annotation uri</title>
+        <ns>102</ns>
+        <id>2</id>
+        <revision>
+            <id>63</id>
+            <parentid>62</parentid>
+            <timestamp>2015-01-20T14:36:46Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="281">[[Has type::Annotation URI]] [[Has description::A variant of datatype URL. It is used in cases where a URL property needs to be exported as an owl:AnnotationProperty]] which is the case almost exclusively for [[Property:Imported from|imported properties]]. [[Category:Lorem ipsum]]</text>
+            <sha1>46ycdri4c69ffwre9r5vdg70imz8hbo</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has boolean</title>
+        <ns>102</ns>
+        <id>3</id>
+        <revision>
+            <id>64</id>
+            <parentid>5</parentid>
+            <timestamp>2015-01-20T14:39:04Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="169">[[Has type::Boolean]] [[Has description::Attribute that can only have two possible values (&quot;true&quot; or &quot;false&quot;, also 1/0, yes/no, t/f, and y/n).]] [[Category:Lorem ipsum]]</text>
+            <sha1>ifjl1y1toemiqr2xuqk9uiixtqcpb5x</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has date</title>
+        <ns>102</ns>
+        <id>4</id>
+        <revision>
+            <id>68</id>
+            <parentid>7</parentid>
+            <timestamp>2015-01-20T14:43:22Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="116">[[Has type::Date]] [[Has description::Used for data values that represent points in time.]] [[Category:Lorem ipsum]]</text>
+            <sha1>kns03j6llvak3gniybwccjmb911ksir</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has email</title>
+        <ns>102</ns>
+        <id>5</id>
+        <revision>
+            <id>69</id>
+            <parentid>9</parentid>
+            <timestamp>2015-01-20T14:44:33Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="99">[[Has type::Email]] [[Has description::Used for simple e-mail addresses.]] [[Category:Lorem ipsum]]</text>
+            <sha1>0v66pbvywzfzpcg4bel9z517yo72k5m</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has number</title>
+        <ns>102</ns>
+        <id>6</id>
+        <revision>
+            <id>78</id>
+            <parentid>70</parentid>
+            <timestamp>2015-01-20T14:56:00Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="170">[[Has type::Number]] [[Has description::Used for property values that contain any kind of number, integer, decimal, and floating point numbers.]] [[Category:Lorem ipsum]]</text>
+            <sha1>54fep1ukb0os8lfqkg3rwkc0v4bgs0g</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has page</title>
+        <ns>102</ns>
+        <id>7</id>
+        <revision>
+            <id>71</id>
+            <parentid>13</parentid>
+            <timestamp>2015-01-20T14:48:40Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="185">[[Has type::Page]] [[Has description::Used for properties whose value is a page in the wiki. These display as a link and may not be longer than 255 characters.]][[Category:Lorem ipsum]]</text>
+            <sha1>chius9t6xeu9gx3rstzw61qmw926tox</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has area</title>
+        <ns>102</ns>
+        <id>8</id>
+        <revision>
+            <id>74</id>
+            <parentid>73</parentid>
+            <timestamp>2015-01-20T14:50:53Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="351">[[Has type::Quantity]] [[Has description::Used for property values that describe quantities, in particular physical quantities such as time or distance.]] [[Category:Lorem ipsum]]
+
+* [[Corresponds to::1 km²]]
+* [[Corresponds to::0.38610 sq mi]]
+* [[Corresponds to::1000 m²]]
+* [[Corresponds to::247.1054 acre]]
+* [[Corresponds to::988.4215 rood]]</text>
+            <sha1>5r975kh3eltz9lte9ifwbxe9i7ocfhl</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has wattage</title>
+        <ns>102</ns>
+        <id>9</id>
+        <revision>
+            <id>83</id>
+            <parentid>17</parentid>
+            <timestamp>2015-01-20T15:04:52Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="309">[[Has type::Quantity]] [[Display units::kW]] [[Has description::Used for quantity property values that are displayed in kW but in support for several units.]] [[Category:Lorem ipsum]]
+
+* [[Corresponds to::1 W, Watt, Watts]]
+* [[Corresponds to::0.001 kW]]
+* [[Corresponds to::0.0013410220 hp, bhp, horsepower]]</text>
+            <sha1>pzt1g6pe9w45y7jqy4h1eb6l1ccin4r</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has status</title>
+        <ns>102</ns>
+        <id>10</id>
+        <revision>
+            <id>81</id>
+            <parentid>79</parentid>
+            <timestamp>2015-01-20T15:00:26Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="204">[[Has type::Text]] [[Has description::Used in combination with a special property to limit allowed values for this property.]] [[Category:Lorem ipsum]]
+
+* [[Allows value::open]]
+* [[Allows value::closed]]</text>
+            <sha1>pkc2foxrm0y6gqmgatjn2esizsygvu0</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has telephone number</title>
+        <ns>102</ns>
+        <id>11</id>
+        <revision>
+            <id>80</id>
+            <parentid>21</parentid>
+            <timestamp>2015-01-20T14:59:32Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="165">[[Has type::Telephone number]] [[Has description::Used for international telephone numbers that are to be stored in a standardized format.]] [[Category:Lorem ipsum]]</text>
+            <sha1>j1ug06j5i2p2yai9vbeflrygfq1wl35</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has record</title>
+        <ns>102</ns>
+        <id>12</id>
+        <revision>
+            <id>77</id>
+            <parentid>23</parentid>
+            <timestamp>2015-01-20T14:54:34Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="244">[[Has type::Record]] [[Has fields::Has text; Has status]] [[Has description::Used for property values that consist of a short list of values of other datatypes where individual value are separated with semicolons (;).]] [[Category:Lorem ipsum]]</text>
+            <sha1>ci5m4k0mfjb6sy9qlca1d0aqsmw78mj</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has temperature</title>
+        <ns>102</ns>
+        <id>13</id>
+        <revision>
+            <id>82</id>
+            <parentid>25</parentid>
+            <timestamp>2015-01-20T15:02:46Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="185">[[Has type::Temperature]] [[Has description::Used for temperature values. Unlike other physical quantities, temperature is specified as special quantity type.]] [[Category:Lorem ipsum]]</text>
+            <sha1>ih2zdhufihughnmcsez3x5k2bjn97oj</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has text</title>
+        <ns>102</ns>
+        <id>14</id>
+        <revision>
+            <id>84</id>
+            <parentid>27</parentid>
+            <timestamp>2015-01-20T15:05:58Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="107">[[Has type::Text]] [[Has description::Used to store strings of arbitrary length.]] [[Category:Lorem ipsum]]</text>
+            <sha1>4ysab73fsjbpfesv9s4so1q1e868v52</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Has Url</title>
+        <ns>102</ns>
+        <id>15</id>
+        <revision>
+            <id>61</id>
+            <parentid>29</parentid>
+            <timestamp>2015-01-20T14:34:19Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="176">[[Has type::URL]] [[Has description::Used for the most common kinds of URLs, URNs, and URIs. It accepts almost any string and interprets it as a URL.]] [[Category:Lorem ipsum]]</text>
+            <sha1>b6wldgwzxnplfyj3qmu1dxivxib9j2g</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Foaf:homepage</title>
+        <ns>102</ns>
+        <id>25</id>
+        <revision>
+            <id>102</id>
+            <parentid>99</parentid>
+            <timestamp>2015-01-20T15:31:41Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="184">[[Has type::URL]] [[Imported from::foaf:homepage]] [[Has description::URL of the homepage of something, which is a general web resource to learn more about a topic.]] [[Category:Foaf]]</text>
+            <sha1>q42rfqfh6ofl4ck8956np6ol1l0zxx0</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Foaf:knows</title>
+        <ns>102</ns>
+        <id>28</id>
+        <revision>
+            <id>100</id>
+            <parentid>96</parentid>
+            <timestamp>2015-01-20T15:30:00Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="177">[[Has type::Page]] [[Imported from::foaf:knows]] [[Has description::A property to describe relationship between one a Person to another that he or she knows.]] [[Category:Foaf]]</text>
+            <sha1>oh0doqn3rjh3rdvqm8b5eel8qq0y505</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Property:Foaf:name</title>
+        <ns>102</ns>
+        <id>29</id>
+        <revision>
+            <id>101</id>
+            <parentid>94</parentid>
+            <timestamp>2015-01-20T15:30:56Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="105">[[Has type::Text]] [[Imported from::foaf:name]] [[Has description::Name for some thing]][[Category:Foaf]]</text>
+            <sha1>dj2dr43esuk9y6is6cae8g4yrn9di0w</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Berlin</title>
+        <ns>0</ns>
+        <id>30</id>
+        <revision>
+            <id>124</id>
+            <parentid>123</parentid>
+            <timestamp>2015-01-20T15:56:28Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="465">'''Berlin''' is the capital of [[Capital of::Germany]] and also its largest city. It is now home to [[Has population::3,520,061]] (as of [[Has date::July 31, 2012]]). The average rainfall is [[Has average rainy days::106.3]] days per year. This city measures [[Has area::891.85 km²]] and has the coordinates [[Has coordinates::52°31'N, 13°24'E]]. It is located in the north of [[located in::Germany]].
+
+[[Category:City]] [[Category:Sample pages]] __SHOWFACTBOX__</text>
+            <sha1>e7j0plw8v65u5cquy1m4d791svk1ahs</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>London</title>
+        <ns>0</ns>
+        <id>34</id>
+        <revision>
+            <id>127</id>
+            <parentid>120</parentid>
+            <timestamp>2015-01-20T15:57:55Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="523">'''London''' is the capital city of [[Capital of::England]] and of the [[Capital of::United Kingdom]]. It is located in [[Located in::England]]. As of [[Year::2010]], the total resident population of London was estimated [[Has population::7,825,200]]. Greater London covers an area of [[Has area::1,706.80 km²]] and has the coordinates [[Has coordinates::51.5073346, -0.12768310000001293]]. It rains on [[Has average rainy days::145]] days per year on average.
+
+
+[[Category:City]] [[Category:Sample pages]] __SHOWFACTBOX__</text>
+            <sha1>aw1l2j77v4bwfa9nacx6m1kyplj7yif</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Lorem ipsum</title>
+        <ns>0</ns>
+        <id>16</id>
+        <revision>
+            <id>116</id>
+            <parentid>108</parentid>
+            <timestamp>2015-01-20T15:49:46Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="1628">[[Has text::Lorem ipsum dolor sit amet consectetuer justo Nam quis lobortis vel. Sapien nulla enim Lorem enim pede lorem nulla justo diam wisi. Libero Nam turpis neque leo scelerisque nec habitasse a lacus mattis. Accumsan tincidunt Sed adipiscing nec facilisis tortor Nunc Sed ipsum tellus.]] [[Has page::Turpis pellentesque]] id sociis pede ipsum Quisque. Eu sed sed porta Integer pulvinar accumsan leo in semper lobortis. Urna vel mattis [[Has page::Pellentesque ante]] iaculis tincidunt et consequat Aliquam dictum.
+
+* Has page: [[Has page::{{PAGENAME}}]]
+* Has number: [[Has number::1001]]
+* Has area: [[Has area::10.25 km²]]
+* Has date: [[Has date::1 Jan 2014]]
+* Has Url: [[Has Url::http://loremipsum.org/]]
+* Has annotation uri: [[Has annotation uri::http://loremipsum.org/foaf.rdf]]
+* Has email: [[Has email::Lorem@ipsum.org]]
+* Has temperature: [[Has temperature::100 °C]]
+* Has wattage: [[Has wattage::9001]], [[Has wattage::9002 W]], [[Has wattage::10 kW]]
+* Has telephone number: [[Has telephone number::+1-201-555-0123]]
+* Has record: [[Has record::Lorem ipsum; closed]]
+* Has status: [[Has status::open]]
+* Has boolean: [[Has boolean::true]]
+
+{{#subobject:
+ |Has page={{PAGENAME}}
+ |Has number=1111
+ |Has area=25 sqmi
+ |Has date=January 4, 2010 7:00 pm
+ |Has Url=http://example.org/some/
+ |Has annotation uri=http://example.org/foaf.rdf
+ |Has email=Lorem@example.org
+ |Has temperature=100 °F
+ |Has wattage=42
+ |Has wattage=42 hp
+ |Has telephone number=+1-201-555-5555
+ |Has record=Lorem enim; closed
+ |Has status=closed
+ |Has boolean=false
+}}
+
+[[Category:Lorem ipsum]] [[Category:Sample pages]] __SHOWFACTBOX__</text>
+            <sha1>nzlomsnyc8mv4ot3ob19cxk1mrey86g</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>John Doe</title>
+        <ns>0</ns>
+        <id>27</id>
+        <revision>
+            <id>103</id>
+            <parentid>92</parentid>
+            <timestamp>2015-01-20T15:36:25Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="288">[[foaf:name::John Doe]] has the homepage [[foaf:homepage::http://jondoe.example.org]].
+His best friend is [[foaf:knows::Jane Doe]]. [[Has annotation uri::http://jondoe.example.org/foaf.rdf]]
+
+[[Special:ExportRDF/John Doe|RDF Export]]
+
+[[Category:Person]] [[Category:Foaf]] __SHOWFACTBOX__</text>
+            <sha1>djwgljb8o46va9y8i9zqeii0n2bzayz</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Subobject</title>
+        <ns>0</ns>
+        <id>37</id>
+        <revision>
+            <id>157</id>
+            <parentid>142</parentid>
+            <timestamp>2015-01-20T17:00:50Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="648">&lt;pre&gt;
+{{#subobject:
+ |Has area=891.85 km²;64 sqmi;67 sqmi|+sep=;
+ |Has area=89 m²
+ |Has wattage=12+33 hp+450 W+15 kW|+sep=+
+ |Has wattage=56 hp|20 W|35 kW
+}}
+&lt;/pre&gt;
+{{#subobject:
+ |Has area=891.85 km²;64 sqmi;67 sqmi|+sep=;
+ |Has area=89 m²
+ |Has wattage=12+33 hp+450 W+15 kW|+sep=+
+ |Has wattage=56 hp|20 W|35 kW
+}}
+== Example query ==
+&lt;pre&gt;
+{{#ask: [[Has subobject::+]] [[Has area::+]] OR [[Has wattage::+]]
+ |?Has area
+ |?Has wattage
+ |format=broadtable
+ |transpose=true
+}}
+&lt;/pre&gt;
+{{#ask: [[Has subobject::+]] [[Has area::+]] OR [[Has wattage::+]]
+ |?Has area
+ |?Has wattage
+ |format=broadtable
+ |transpose=true
+}}
+
+[[Category:Sample pages]]</text>
+            <sha1>tv2i2puwq3gyq371wx2yknqnra6msae</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Recurring events</title>
+        <ns>0</ns>
+        <id>38</id>
+        <revision>
+            <id>163</id>
+            <parentid>162</parentid>
+            <timestamp>2015-01-20T17:49:20Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="1405">&lt;pre&gt;
+{{#set_recurring_event:some
+ |property=has date
+ |Has page=Recurring events
+ |Has text=Simple recurring events text
+ |start=June 8, 2010
+ |unit=day
+ |period=1
+ |limit=10
+ |duration=7200
+ |include=March 16, 2010;March 23, 2010|+sep=;
+ |exclude=March 15, 2010;March 22, 2010|+sep=;
+}}
+&lt;/pre&gt;
+{{#set_recurring_event:some
+ |property=has date
+ |Has page=Recurring events
+ |Has text=Simple recurring events text
+ |start=June 8, 2010
+ |unit=day
+ |period=1
+ |limit=10
+ |duration=7200
+ |include=March 16, 2010;March 23, 2010|+sep=;
+ |exclude=March 15, 2010;March 22, 2010|+sep=;
+}}
+== Example query ==
+&lt;pre&gt;
+{{#ask: [[Has page::Recurring events]]
+ |?Has date
+ |limit=5
+ |format=broadtable
+}}
+&lt;/pre&gt;
+{{#ask: [[Has page::Recurring events]]
+ |?Has date
+ |limit=5
+ |format=broadtable
+}}
+
+In case the &lt;code&gt;format=eventcalendar&lt;/code&gt; is available then the results will be as displayed as calendar otherwise a simple table is used.
+&lt;pre&gt;
+{{#ask: [[Has page::Recurring events]]
+ |?Has text
+ |?Has date
+ |limit=5
+ |format=eventcalendar
+ |start=latest
+}}
+&lt;/pre&gt;
+{{#ask: [[Has page::Recurring events]]
+ |?Has text
+ |?Has date
+ |limit=5
+ |format=eventcalendar
+ |start=latest
+}}
+
+[[Category:Sample pages]]</text>
+            <sha1>5okxt4586e0ucq7pbimfaw26q8d1wua</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Main Page</title>
+        <ns>0</ns>
+        <id>1</id>
+        <revision>
+            <id>160</id>
+            <parentid>156</parentid>
+            <timestamp>2015-01-20T17:23:35Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <minor/>
+            <comment>Protected &quot;[[Main Page]]&quot; ([Edit=Allow only administrators] (indefinite) [Move=Allow only administrators] (indefinite))</comment>
+            <text xml:space="preserve" bytes="649">{{Welcome}}
+
+== Sample pages ==
+
+* '''{{#ask:[[:+]] [[Category:Sample pages]]}}''' demonstrate the usage of in-text annotations for most user-defined properties deployed with the sandbox.
+* '''[[John Doe]]''' shows to usage of imported vocabularies.
+* [[Export]] collects pages that can be exported via [[Special:Export]]
+
+== Sandbox provided user-defined properties ==
+{{#ask: [[Property:+]][[Category:Lorem ipsum]]
+ |?Has description=Description
+ |?Has type
+}}
+
+== Sandbox provided imported vocabulary ==
+{{#ask: [[Property:+]][[Category:Imported vocabulary]]
+ |?Has description=Description
+ |?Has type
+}}
+
+[[Category:Sandbox]] __SHOWFACTBOX__</text>
+            <sha1>tbjkkwxpdac3zn36jihkzh7g767mevk</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Export</title>
+        <ns>0</ns>
+        <id>39</id>
+        <revision>
+            <id>165</id>
+            <parentid>164</parentid>
+            <timestamp>2015-01-20T17:55:21Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="813">Cut and paste list to be used for the export via [[Special:Export]] (make sure to select the &quot;Include templates&quot; option).
+
+&lt;pre&gt;
+MediaWiki:Smw_import_foaf
+Template:Welcome
+
+Property:Has_description
+Property:Has_average_rainy_days
+Property:Has_coordinates
+Property:Has_population
+Property:Has_annotation_uri
+Property:Has_boolean
+Property:Has_date
+Property:Has_email
+Property:Has_number
+Property:Has_page
+Property:Has_area
+Property:Has_wattage
+Property:Has_status
+Property:Has_telephone_number
+Property:Has_record
+Property:Has_temperature
+Property:Has_text
+Property:Has_Url
+Property:Foaf:homepage
+Property:Foaf:knows
+Property:Foaf:name
+
+Berlin
+London
+Lorem_ipsum
+John_Doe
+Subobject
+Recurring_events
+Main_Page
+Export
+
+Category:Foaf
+Category:Lorem_ipsum
+Category:Sample_pages
+Category:Template
+Category:Sandbox
+&lt;/pre&gt;</text>
+            <sha1>ovxy19obo609711489k15ct5utruln2</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Category:Foaf</title>
+        <ns>14</ns>
+        <id>26</id>
+        <revision>
+            <id>97</id>
+            <parentid>88</parentid>
+            <timestamp>2015-01-20T15:24:35Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="53">[[Category:Sandbox]] [[Category:Imported vocabulary]]</text>
+            <sha1>lq1tx5qsi1ui3e0rfxzegxt11sk9dl8</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Category:Lorem ipsum</title>
+        <ns>14</ns>
+        <id>18</id>
+        <revision>
+            <id>53</id>
+            <parentid>35</parentid>
+            <timestamp>2015-01-20T14:20:52Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <text xml:space="preserve" bytes="20">[[Category:Sandbox]]</text>
+            <sha1>dh9im7r0mtxvjuf1m78gj7wrt6bg5qq</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Category:Sample pages</title>
+        <ns>14</ns>
+        <id>33</id>
+        <revision>
+            <id>114</id>
+            <timestamp>2015-01-20T15:48:23Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <comment>Created page with &quot;[[Category:Sandbox]]&quot;</comment>
+            <text xml:space="preserve" bytes="20">[[Category:Sandbox]]</text>
+            <sha1>dh9im7r0mtxvjuf1m78gj7wrt6bg5qq</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Category:Template</title>
+        <ns>14</ns>
+        <id>21</id>
+        <revision>
+            <id>51</id>
+            <timestamp>2015-01-20T14:19:31Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <comment>Created page with &quot;[[Category:Sandbox]]&quot;</comment>
+            <text xml:space="preserve" bytes="20">[[Category:Sandbox]]</text>
+            <sha1>dh9im7r0mtxvjuf1m78gj7wrt6bg5qq</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+    <page>
+        <title>Category:Sandbox</title>
+        <ns>14</ns>
+        <id>22</id>
+        <revision>
+            <id>52</id>
+            <timestamp>2015-01-20T14:20:05Z</timestamp>
+            <contributor>
+                <username>Importer</username>
+                <id>1</id>
+            </contributor>
+            <comment>Created page with &quot;Collective category&quot;</comment>
+            <text xml:space="preserve" bytes="19">Collective category</text>
+            <sha1>qrtkbjlvayk2pindmalo732nmlziiml</sha1>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+        </revision>
+    </page>
+</mediawiki>
