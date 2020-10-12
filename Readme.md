@@ -6,13 +6,17 @@
 
 # Mediawiki
 - Benutzer: dan
-- Passwort: hSVVWcPwdZ*6**y
+- Passwort: hSVVWcPwdZ6y
 
 # LocalSettings.php
 - enableSemantics(); (lokal)
+- $wgMainCacheType = CACHE_NONE;
+- $wgCacheDirectory = false;
 - docker-compose exec mediawiki maintenance/update.php --quick
 
 # Skin
-- https://github.com/jthingelstad/foreground
-- wfLoadSkin( 'foreground' );
-- $wgDefaultSkin = "foreground";<
+- wfLoadSkin( 'chameleon' );
+- $wgDefaultSkin = "chameleon";
+
+# Extensions
+- docker cp alcuin_mediawiki_1:/var/www/html/extensions extensions/
