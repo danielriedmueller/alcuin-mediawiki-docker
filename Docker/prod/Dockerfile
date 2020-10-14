@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
 
 # Load Alcuin extension via Composer
 RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer \
+    && composer config minimum-stability dev \
     && composer require soital/alcuin:dev-master
 
 # Load PageSchemas extension via Git
