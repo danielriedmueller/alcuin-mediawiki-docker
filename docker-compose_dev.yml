@@ -14,7 +14,7 @@ services:
       # After initial setup, download LocalSettings.php to the same directory as
       # this yaml and uncomment the following line and use compose to restart
       # the mediawiki service
-      # - ./LocalSettings.php:/var/www/html/LocalSettings.php
+      #- ./LocalSettings.php:/var/www/html/LocalSettings.php
   mariadb:
     image: mariadb:latest
     ports:
@@ -23,7 +23,7 @@ services:
       - mariadb_data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=mediawiki
+      - MYSQL_DATABASE=alcuinwiki
 
 volumes:
   mariadb_data:

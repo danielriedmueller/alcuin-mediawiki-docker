@@ -6,10 +6,15 @@ RUN apt-get update && apt-get install -y \
         zip \
   && docker-php-ext-install zip
 
-# Load Alcuin extension via Composer
-RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer \
-    && composer config minimum-stability dev \
-    && composer require soital/alcuin:dev-master
+# Install Composer
+RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --version=1.10.16 --install-dir=/usr/bin/ --filename=composer \
+    && composer config minimum-stability dev
 
-# Load PageSchemas extension via Git
-RUN cd extensions && git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/PageSchemas.git
+# Load Alcuin extension via Composer
+# RUN composer clear-cache && composer require soital/alcuin:dev-master
+RUN composer require soital/alcuin:dev-master
+
+# Load PageForms and PageSchemas extension via Git
+RUN cd extensions \
+    && git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/PageForms.git \
+    && git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/PageSchemas.git
