@@ -16,7 +16,7 @@ RUN composer require soital/alcuin:dev-master
 
 # Load DisplayTitle, PageForms and PageSchemas extension via Git
 RUN cd extensions \
-    && git clone -b REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/PageForms.git \
-    && git clone -b REL1_35 https://gerrit.wikimedia.org/r/mediawiki/extensions/PageSchemas.git \
+    && git https://gerrit.wikimedia.org/r/mediawiki/extensions/PageForms.git \
+    && git https://gerrit.wikimedia.org/r/mediawiki/extensions/PageSchemas.git \
     && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-DisplayTitle.git \
     && mv mediawiki-extensions-DisplayTitle DisplayTitle
