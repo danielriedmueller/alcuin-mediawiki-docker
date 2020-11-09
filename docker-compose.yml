@@ -9,7 +9,6 @@ services:
     depends_on:
       - mariadb
     volumes:
-      - ./var/www/html/images
       - ./assets:/var/www/html/resources/assets
       # After initial setup, download LocalSettings.php to the same directory as
       # this yaml and uncomment the following line and use compose to restart
