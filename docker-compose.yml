@@ -8,6 +8,7 @@ services:
       - 80:80
     depends_on:
       - mariadb
+      - elasticsearch
     volumes:
       - ./assets:/var/www/html/resources/assets
       # After initial setup, download LocalSettings.php to the same directory as
@@ -21,6 +22,17 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=mediawiki
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.5.4
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+      discovery.type: single-node
 
 volumes:
   mariadb_data:
+  esdata:

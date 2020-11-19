@@ -20,3 +20,15 @@ RUN cd extensions \
     && git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/PageSchemas.git \
     && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-DisplayTitle.git \
     && mv mediawiki-extensions-DisplayTitle DisplayTitle
+
+# Load Elastica extension extension via Git
+RUN cd /var/www/html/extensions \
+    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-Elastica.git \
+    && mv mediawiki-extensions-Elastica Elastica \
+    && cd Elastica \
+    && composer install --no-dev
+
+# Load CirrusSearch extension via Git
+RUN cd /var/www/html/extensions \
+    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-CirrusSearch.git \
+    && mv mediawiki-extensions-CirrusSearch CirrusSearch
