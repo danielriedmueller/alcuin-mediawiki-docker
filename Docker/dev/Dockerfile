@@ -39,3 +39,13 @@ RUN cd /var/www/html/extensions \
 RUN cd /var/www/html/extensions \
     && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-CirrusSearch.git \
     && mv mediawiki-extensions-CirrusSearch CirrusSearch
+
+# Load ShortDescription extension via Git
+RUN cd /var/www/html/extensions \
+    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-ShortDescription.git \
+    && mv mediawiki-extensions-ShortDescription ShortDescription
+
+# Load TinyMce extension via Git
+RUN cd /var/www/html/extensions \
+    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-TinyMCE.git \
+    && mv mediawiki-extensions-TinyMCE TinyMCE
