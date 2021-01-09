@@ -1,6 +1,6 @@
 Alcuin
 ===============
-##Installation
+## Installation
 <pre>
 docker-compose up --build -d
 </pre>
@@ -11,17 +11,17 @@ docker-compose up --build -d
 - docker-compose down und docker-compose up --build -d
 - docker-compose exec mediawiki maintenance/update.php --quick
 
-####Datenbank Konfiguration
+#### Datenbank Konfiguration
 - Server: mariadb
 - Datenbank: mediawiki
 - root
 - root
 
-####Mediawiki Konfiguration
+#### Mediawiki Konfiguration
 - admin
 - adminpassword
 
-####LocalSettings.php Anpassungen
+#### LocalSettings.php Anpassungen
 <pre>
 wfLoadExtension( 'ParserFunctions' );
 wfLoadExtension( 'Alcuin' );
@@ -58,7 +58,7 @@ $egScssCacheType = CACHE_NONE;
 $wgPageFormsFormCacheType = CACHE_NONE;
 </pre>
 
-####ontology2smw
+#### ontology2smw
 - git clone https://github.com/TIBHannover/ontology2smw.git
 - cd ontology2smw
 - pip install --upgrade setuptools
@@ -76,7 +76,7 @@ $wgPageFormsFormCacheType = CACHE_NONE;
     </pre>
 - ontology2smw --format ttl --ontology http://purl.org/spar/fabio.ttl --write
 
-####Elasticsearch einrichten
+#### Elasticsearch einrichten
 <pre>
 wfLoadExtension( 'CirrusSearch' );
 require_once "$IP/extensions/CirrusSearch/tests/jenkins/FullyFeaturedConfig.php";
@@ -95,7 +95,7 @@ $wgSearchType = 'CirrusSearch';
 $wgCirrusSearchIndexBaseName = 'mediawiki';
 </pre>
 
-####Elastic search vm memory
+#### Elastic search vm memory
 - pactl load-module module-detect
 - sysctl -w vm.max_map_count=262144
 
@@ -106,7 +106,7 @@ $wgCirrusSearchIndexBaseName = 'mediawiki';
 
 composer config minimum-stability dev
 
-####PageForms bugfix 
+#### PageForms bugfix 
 - https://github.com/danielriedmueller/PageForms.git
 - ext.pf.select2.comobox.js Zeile 169
 <pre>
@@ -119,14 +119,14 @@ else if (Object.keys(data).length !== 0) {
 }
 </pre>
 
-####XML Parser
+#### XML Parser
 - sudo apt install python3-bs4 
 - sudo apt install python3-pip
 - pip install lxml
 
 Page "Utrum_contradictio_sit_maxima_oppositio	" was not imported because the name to which it would be imported is invalid on this wiki.
 
-####Import rdf2smw
+#### Import rdf2smw
 <pre>
 ./rdf2smw --in alcuin.ttl --out alcuin.xml
 
@@ -143,7 +143,7 @@ php maintenance/initSiteStats.php --update
 maintenance/update.php --quick
 </pre>
 
-###Datenbank Dump
+#### Datenbank Dump
 <pre>
 docker-compose exec mariadb mysqldump --default-character-set=binary --user=root --password=root mediawiki > dump_of_wikidb.sql
 docker-compose exec mariadb mysqladmin -u root -p drop mediawiki
@@ -157,18 +157,18 @@ docker-compose exec mariadb mysqladmin -u wikidb_user -p create wikidb
 docker-compose run mariadb mysql -u wikidb_user -p wikidb < dump_of_wikidb.sql
 </pre>
 
-####Mediawiki Snippets
+#### Mediawiki Snippets
 - MediaWikiServices::getInstance()->getParser()->getFreshParser()
 
-####Transclusion
+#### Transclusion
 {{:{{{1}}}}}
 
-####Inline query creator of
+#### Inline query creator of
 <pre>
 {{#arraymaptemplate:{{#ask:
  [[Maker::{{PAGENAME}}]]
 }}|UnorderedListView|,|\n}}
 </pre>
 
-####Form als default Edit: In Kategorieseite
+#### Form als default Edit: In Kategorieseite
 {{#default_form:Work}}
