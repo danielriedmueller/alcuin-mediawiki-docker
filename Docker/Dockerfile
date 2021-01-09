@@ -40,6 +40,11 @@ RUN cd /var/www/html/extensions \
     && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-CirrusSearch.git \
     && mv mediawiki-extensions-CirrusSearch CirrusSearch
 
+# Load ParserFunctions extension via Git
+RUN cd /var/www/html/extensions \
+    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-ParserFunctions.git \
+    && mv mediawiki-extensions-ParserFunctions ParserFunctions
+
 # Load ShortDescription extension via Git
 #RUN cd /var/www/html/extensions \
 #    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-ShortDescription.git \
