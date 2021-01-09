@@ -2,13 +2,14 @@ version: '3'
 
 services:
   mediawiki:
-    build: ./Docker/prod
+    build: ./Docker
     restart: always
     ports:
       - 80:80
     depends_on:
       - mariadb
       - elasticsearch
+    working_dir: /var/www/html
     volumes:
       - ./assets:/var/www/html/resources/assets
       # After initial setup, download LocalSettings.php to the same directory as

@@ -7,11 +7,11 @@ RUN apt-get update && apt-get install -y \
   && docker-php-ext-install zip
 
 # Install Xdebug
-RUN pecl install xdebug-2.9.8 && docker-php-ext-enable xdebug \
+#RUN pecl install xdebug-2.9.8 && docker-php-ext-enable xdebug \
     #&& echo 'zend_extension="/usr/local/lib/php/extensions/no-debug-non-zts-20180731/xdebug.so"' >> /usr/local/etc/php/php.ini \
-    && echo 'xdebug.remote_port=9000' >> /usr/local/etc/php/php.ini \
-    && echo 'xdebug.remote_enable=1' >> /usr/local/etc/php/php.ini \
-    && echo 'xdebug.remote_connect_back=1' >> /usr/local/etc/php/php.ini
+#    && echo 'xdebug.remote_port=9000' >> /usr/local/etc/php/php.ini \
+#    && echo 'xdebug.remote_enable=1' >> /usr/local/etc/php/php.ini \
+#    && echo 'xdebug.remote_connect_back=1' >> /usr/local/etc/php/php.ini
 
 # Install Composer
 RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --version=1.10.16 --install-dir=/usr/bin/ --filename=composer \
@@ -41,11 +41,15 @@ RUN cd /var/www/html/extensions \
     && mv mediawiki-extensions-CirrusSearch CirrusSearch
 
 # Load ShortDescription extension via Git
-RUN cd /var/www/html/extensions \
-    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-ShortDescription.git \
-    && mv mediawiki-extensions-ShortDescription ShortDescription
+#RUN cd /var/www/html/extensions \
+#    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-ShortDescription.git \
+#    && mv mediawiki-extensions-ShortDescription ShortDescription
 
 # Load TinyMce extension via Git
+#RUN cd /var/www/html/extensions \
+#    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-TinyMCE.git \
+#    && mv mediawiki-extensions-TinyMCE TinyMCE
+
+# Load SemanticDrilldown extension via Git
 RUN cd /var/www/html/extensions \
-    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-TinyMCE.git \
-    && mv mediawiki-extensions-TinyMCE TinyMCE
+    && git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/SemanticDrilldown.git
