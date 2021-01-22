@@ -6,6 +6,7 @@ services:
     restart: always
     ports:
       - 8001:80
+      - 8080:8080
     depends_on:
       - mariadb
       - elasticsearch
@@ -18,6 +19,8 @@ services:
       # - ./LocalSettings.php:/var/www/html/LocalSettings.php
   mariadb:
     image: mariadb:latest
+    ports:
+      - 3306:3306
     volumes:
       - mariadb_data:/var/lib/mysql
     environment:
@@ -27,9 +30,9 @@ services:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.5.4
     volumes:
       - esdata:/usr/share/elasticsearch/data
-    ports:
-      - 9200:9200
-      - 9300:9300
+    #ports:
+    #  - 9200:9200
+    #  - 9300:9300
     environment:
       ES_JAVA_OPTS: "-Xms512m -Xmx512m"
       discovery.type: single-node

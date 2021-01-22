@@ -58,3 +58,7 @@ RUN cd /var/www/html/extensions \
 # Load SemanticDrilldown extension via Git
 RUN cd /var/www/html/extensions \
     && git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/SemanticDrilldown.git
+
+# Load Network extension fork via Git
+RUN cd /var/www/html/extensions \
+    && https://github.com/danielriedmueller/Network.git

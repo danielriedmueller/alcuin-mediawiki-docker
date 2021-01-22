@@ -172,3 +172,9 @@ docker-compose run mariadb mysql -u wikidb_user -p wikidb < dump_of_wikidb.sql
 
 #### Form als default Edit: In Kategorieseite
 {{#default_form:Work}}
+
+#### SPARQL
+$smwgDefaultStore = 'SMWSparqlStore';
+<pre>
+docker-compose exec mediawiki php extension/SemanticMediaWiki/maintenance/rebuildData.php -v
+</pre>
