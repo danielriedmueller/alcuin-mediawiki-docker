@@ -61,4 +61,9 @@ RUN cd /var/www/html/extensions \
 
 # Load Network extension fork via Git
 RUN cd /var/www/html/extensions \
-    && https://github.com/danielriedmueller/Network.git
+    && git clone https://github.com/danielriedmueller/Network.git
+
+# Load Variables extension fork via Git
+RUN cd /var/www/html/extensions \
+    && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-Variables.git \
+    && mv mediawiki-extensions-Variables Variables
