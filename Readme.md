@@ -26,6 +26,7 @@ docker-compose up --build -d
 
 #### LocalSettings.php Anpassungen
 <pre>
+wfLoadSkin( 'Vector' );
 wfLoadSkin( 'chameleon' );
 $wgDefaultSkin = "chameleon";
 wfLoadExtension( 'Bootstrap' );
@@ -42,6 +43,8 @@ wfLoadExtension( 'Network' );
 wfLoadExtension( 'SemanticCite' );
 wfLoadExtension( 'Maps' );
 wfLoadExtension( 'Variables' );
+wfLoadExtension( 'SemanticResultFormats' );
+wfLoadExtension( 'Tabs' );
 
 # End of automatically generated settings.
 # Add more configuration options below.
@@ -49,7 +52,8 @@ enableSemantics();
 
 $egChameleonLayoutFile= __DIR__ . '/extensions/Alcuin/chameleon/layouts/clean.xml';
 $egChameleonExternalStyleModules = [
-    __DIR__ . '/extensions/Alcuin/resources/scss/after_main.scss' => 'afterMain'
+    __DIR__ . '/extensions/Alcuin/resources/scss/style.scss' => 'afterMain',
+    __DIR__ . '/extensions/Alcuin/resources/scss/variables.scss' => 'afterVariables',
 ];
 $egChameleonExternalStyleVariables = [
     'container-max-widths' => '(sm: 540px, md: 720px, lg: 960px, xl: 1920px)'
@@ -74,13 +78,19 @@ $wgGroupPermissions['*']['edit'] = false;
 $wgGroupPermissions['*']['createpage'] = false;
 $wgGroupPermissions['admin']['edit'] = true;
 $wgGroupPermissions['admin']['createpage'] = true;
+$wgGroupPermissions['admin']['smw-admin'] = true;
+$wgGroupPermissions['admin']['smw-pageedit'] = true;
+$wgGroupPermissions['admin']['smw-patternedit'] = true;
+$wgGroupPermissions['admin']['smw-schemaedit'] = true;
 
 $egScssCacheType = CACHE_NONE;
 $wgPageFormsFormCacheType = CACHE_NONE;
+$wgInvalidateCacheOnLocalSettingsChange = true;
+$smwgChangePropagationProtection = false;
 
 // Exclude Property NS
 $wgPageNetworkExcludedNamespaces = [102];
-$wgPageNetworkExcludeCategories = ['Event'];
+$wgPageNetworkExcludeCategories = ['Event', 'WorkPart'];
 
 // Supported shapes: "ellipse", "box", "circle", "database", "diamond", "dot", "square", "star", "text", "triangle", "triangleDown", "hexagon"
 $wgPageNetworkCategoriesOption = [
@@ -102,6 +112,14 @@ $wgPageNetworkCategoriesOption = [
     ]
 ];
 $egMapsDefaultService = 'leaflet';
+
+$srfgArraySep = "|";
+$srfgArrayPropSep  = "|";
+$srfgArrayManySep  = "|";
+
+$wgPFEnableStringFunctions = true;
+
+$wgRawHtml = true;
 </pre>
 
 #### Turtle import with ontology2smw
@@ -274,6 +292,8 @@ where 'template' will use each value of the {{{2}}} list in its own request.
 #### Form als default Edit: In Kategorieseite
 {{#default_form:Work}}
 
+#### Damit Templates nicht in Kategorien auftauchen. In template seite:
+<includeonly>[[Category:unfinished]]</includeonly>
 
 #### SPARQL
 $smwgDefaultStore = 'SMWSparqlStore';
