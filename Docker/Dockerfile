@@ -78,10 +78,10 @@ RUN cd /var/www/html/extensions \
 #    && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-NoTitle.git \
 #    && mv mediawiki-extensions-NoTitle NoTitle
 
-# Load NoTitle extension via Git
-#RUN cd /var/www/html/extensions \
-#    && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-ExternalData.git \
-#    && mv mediawiki-extensions-ExternalData ExternalData
+# Load ExternalData extension via Git
+RUN cd /var/www/html/extensions \
+    && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-ExternalData.git \
+    && mv mediawiki-extensions-ExternalData ExternalData
 
 # Load LinkedWiki extension via Git
 RUN cd /var/www/html/extensions \
