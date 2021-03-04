@@ -19,10 +19,12 @@ RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --version=1.
 
 # Load Alcuin extension via Composer
 # RUN composer clear-cache && composer require soital/alcuin:dev-master
-RUN composer require soital/alcuin:dev-master
+RUN composer require soital/alcuin:dev-master \
+    && /var/www/html/extensions/Alcuin \
+    && git pull
 
 # Load DisplayTitle, PageForms and PageSchemas extension via Git
-RUN cd extensions \
+RUN cd /var/www/html/extensions \
     && git clone https://github.com/danielriedmueller/PageForms.git \
     && git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/PageSchemas.git \
     && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-DisplayTitle.git \
@@ -94,3 +96,6 @@ RUN cd /var/www/html/extensions \
     && apt -y install yarn \
     && cd LinkedWiki \
     && yarn install --production=true
+
+RUN cd /var/www/html/ \
+    && composer update
