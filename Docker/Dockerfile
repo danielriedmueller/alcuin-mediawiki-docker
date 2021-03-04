@@ -20,7 +20,7 @@ RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --version=1.
 # Load Alcuin extension via Composer
 # RUN composer clear-cache && composer require soital/alcuin:dev-master
 RUN composer require soital/alcuin:dev-master \
-    && /var/www/html/extensions/Alcuin \
+    && cd /var/www/html/extensions/Alcuin \
     && git pull
 
 # Load DisplayTitle, PageForms and PageSchemas extension via Git
