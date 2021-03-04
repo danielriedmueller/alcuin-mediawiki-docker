@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 
 # Install Xdebug
 #RUN pecl install xdebug-2.9.8 && docker-php-ext-enable xdebug \
-    #&& echo 'zend_extension="/usr/local/lib/php/extensions/no-debug-non-zts-20180731/xdebug.so"' >> /usr/local/etc/php/php.ini \
+#    && echo 'zend_extension="/usr/local/lib/php/extensions/no-debug-non-zts-20180731/xdebug.so"' >> /usr/local/etc/php/php.ini \
 #    && echo 'xdebug.remote_port=9000' >> /usr/local/etc/php/php.ini \
 #    && echo 'xdebug.remote_enable=1' >> /usr/local/etc/php/php.ini \
 #    && echo 'xdebug.remote_connect_back=1' >> /usr/local/etc/php/php.ini
@@ -67,3 +67,30 @@ RUN cd /var/www/html/extensions \
 RUN cd /var/www/html/extensions \
     && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-Variables.git \
     && mv mediawiki-extensions-Variables Variables
+
+# Load Tab extension via Git
+RUN cd /var/www/html/extensions \
+    && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-Tabs.git \
+    && mv mediawiki-extensions-Tabs Tabs
+
+# Load NoTitle extension via Git
+#RUN cd /var/www/html/extensions \
+#    && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-NoTitle.git \
+#    && mv mediawiki-extensions-NoTitle NoTitle
+
+# Load NoTitle extension via Git
+#RUN cd /var/www/html/extensions \
+#    && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-ExternalData.git \
+#    && mv mediawiki-extensions-ExternalData ExternalData
+
+# Load LinkedWiki extension via Git
+RUN cd /var/www/html/extensions \
+    && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-LinkedWiki.git \
+    && mv mediawiki-extensions-LinkedWiki LinkedWiki \
+    && apt -y install gnupg \
+    && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
+    && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+    && apt update \
+    && apt -y install yarn \
+    && cd LinkedWiki \
+    && yarn install --production=true
