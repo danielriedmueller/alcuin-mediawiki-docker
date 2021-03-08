@@ -17,12 +17,6 @@ RUN apt-get update && apt-get install -y \
 RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --version=1.10.16 --install-dir=/usr/bin/ --filename=composer \
     && composer config minimum-stability dev
 
-# Load Alcuin extension via Composer
-# RUN composer clear-cache && composer require soital/alcuin:dev-master
-RUN composer require soital/alcuin:dev-master \
-    && cd /var/www/html/extensions/Alcuin \
-    && git pull
-
 # Load DisplayTitle, PageForms and PageSchemas extension via Git
 RUN cd /var/www/html/extensions \
     && git clone https://github.com/danielriedmueller/PageForms.git \
@@ -96,6 +90,12 @@ RUN cd /var/www/html/extensions \
     && apt -y install yarn \
     && cd LinkedWiki \
     && yarn install --production=true
+
+# Load Alcuin extension via Composer
+# RUN composer clear-cache && composer require soital/alcuin:dev-master
+RUN composer require soital/alcuin:dev-master \
+    && cd /var/www/html/extensions/Alcuin \
+    && git pull
 
 RUN cd /var/www/html/ \
     && composer update
