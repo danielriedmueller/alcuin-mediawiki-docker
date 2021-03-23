@@ -96,6 +96,6 @@ RUN cd /var/www/html/extensions \
 RUN composer clearcache \
     && composer require soital/alcuin:dev-master \
     && cd /var/www/html/extensions/Alcuin \
-    && git pull
+    && git pull \
     && cd /var/www/html/ \
     && composer update
