@@ -29,9 +29,8 @@ docker-compose up --build -d
 wfLoadSkin( 'Vector' );
 wfLoadSkin( 'chameleon' );
 $wgDefaultSkin = "chameleon";
+wfLoadExtension( 'LinkedWiki' );
 wfLoadExtension( 'Bootstrap' );
-# The following skins were automatically enabled:
-
 wfLoadExtension( 'ParserFunctions' );
 wfLoadExtension( 'Alcuin' );
 wfLoadExtension( 'DisplayTitle' );
@@ -45,10 +44,11 @@ wfLoadExtension( 'Maps' );
 wfLoadExtension( 'Variables' );
 wfLoadExtension( 'SemanticResultFormats' );
 wfLoadExtension( 'Tabs' );
+wfLoadExtension( 'ExternalData' );
 
 # End of automatically generated settings.
 # Add more configuration options below.
-enableSemantics();
+enableSemantics('alcuin.soital.de');
 
 $egChameleonLayoutFile= __DIR__ . '/extensions/Alcuin/chameleon/layouts/clean.xml';
 $egChameleonExternalStyleModules = [
@@ -119,6 +119,22 @@ $srfgArrayManySep  = "|";
 
 $wgPFEnableStringFunctions = true;
 
+$smwgDefaultStore = 'SMWSparqlStore';
+$smwgSparqlRepositoryConnector = 'fuseki';
+$smwgSparqlQueryEndpoint = 'http://dockerhost:3030/fuseki/query';
+$smwgSparqlUpdateEndpoint = 'http://dockerhost:3030/fuseki/update';
+$smwgSparqlDataEndpoint = '';
+
+$wgLinkedWikiConfigSPARQLServices["fuseki"] = array(
+        "debug" => true,
+        "isReadOnly" => true,
+        "typeRDFDatabase" => "fuseki",
+        "endpointRead" => "http://alcuin.soital.de:3030/fuseki/sparql",
+        "endpointWrite" => "http://alcuin.soital.de:3030/fuseki/update",
+        "HTTPMethodForRead" => "GET",
+        "HTTPMethodForWrite" => "POST"
+);
+$wgLinkedWikiSPARQLServiceByDefault= "fuseki";
 $wgRawHtml = true;
 </pre>
 
@@ -159,6 +175,11 @@ php maintenance/rebuildrecentchanges.php
 php maintenance/initSiteStats.php --update
 maintenance/update.php --quick
 php maintenance/runJobs.php
+</pre>
+
+### Fuseki starten
+<pre>
+./fuseki-server (in screen)
 </pre>
 
 #### Elasticsearch einrichten

@@ -93,9 +93,9 @@ RUN cd /var/www/html/extensions \
 
 # Load Alcuin extension via Composer
 # RUN composer clear-cache && composer require soital/alcuin:dev-master
-RUN composer require soital/alcuin:dev-master \
+RUN composer clearcache \
+    && composer require soital/alcuin:dev-master \
     && cd /var/www/html/extensions/Alcuin \
     && git pull
-
-RUN cd /var/www/html/ \
+    && cd /var/www/html/ \
     && composer update
