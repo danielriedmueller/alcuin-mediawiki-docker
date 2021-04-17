@@ -127,7 +127,7 @@ $smwgSparqlDataEndpoint = '';
 
 $wgLinkedWikiConfigSPARQLServices["fuseki"] = array(
         "debug" => true,
-        "isReadOnly" => true,
+        "isReadOnly" => false,
         "typeRDFDatabase" => "fuseki",
         "endpointRead" => "http://alcuin.soital.de:3030/fuseki/sparql",
         "endpointWrite" => "http://alcuin.soital.de:3030/fuseki/update",
@@ -135,7 +135,16 @@ $wgLinkedWikiConfigSPARQLServices["fuseki"] = array(
         "HTTPMethodForWrite" => "POST"
 );
 $wgLinkedWikiSPARQLServiceByDefault= "fuseki";
+$wgLinkedWikiSPARQLServiceSaveDataOfWiki= "fuseki";
+
 $wgRawHtml = true;
+$wgMemoryLimit = "1G";
+
+</pre>
+
+### Linked Wiki Anpassung
+<pre>
+remove: extension.json:163 "resources/bootstrap/dist/bootstrap.light.min.css"
 </pre>
 
 #### Turtle import with ontology2smw
@@ -143,7 +152,7 @@ $wgRawHtml = true;
 - cd ontology2smw
 - pip install --upgrade setuptools
 - python setup.py install
-- http://localhost:8001/index.php/Special:UserRights -> admin user, add bot to user group
+- http://localhost:8001/index.php?title=Special:UserRights&user=admin -> add bot to user group
 - http://localhost:8001/index.php/Special:BotPasswords -> insert bot name (e.g. ontology), grant basic, editinterface, editpage, editprotected, createeditmovepage, highvolume, generate bot password
 - add password to ontology2swm/wikidetails.yml
     - e.g. 
@@ -179,7 +188,8 @@ php maintenance/runJobs.php
 
 ### Fuseki starten
 <pre>
-./fuseki-server (in screen)
+screen
+./fuseki-server --update --port=3030 --loc=/home/alcuin-mediawiki-docker/fuseki /fuseki
 </pre>
 
 #### Elasticsearch einrichten
@@ -248,7 +258,7 @@ docker-compose exec mariadb mysqladmin -u root -p create mediawiki
 <pre>
 docker-compose exec mariadb mysqladmin -u root -p drop mediawiki
 docker-compose exec mariadb mysqladmin -u root -p create mediawiki
-docker-compose run mariadb mysql -u create -p mediawiki < dump_of_wikidb.sql
+docker-compose exec -T mariadb mysql -uroot -proot mediawiki < dump_of_wikidb.sql
 </pre>
 
 #### Mediawiki Snippets

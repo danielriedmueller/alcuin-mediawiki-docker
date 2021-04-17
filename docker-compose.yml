@@ -2,27 +2,33 @@ version: '3'
 
 services:
   mediawiki:
-    build: ./Docker
+    build: ./Docker/Mediawiki
     restart: always
     ports:
-      - 80:80
+      - 8001:80
     extra_hosts:
-      - dockerhost:192.168.188.34
+      - dockerhost:168.119.51.65
     depends_on:
       - mariadb
       - elasticsearch
     working_dir: /var/www/html
+    links:
+      - mariadb
     volumes:
       - ./assets:/var/www/html/resources/assets
+      # After initial setup, download LocalSettings.php to the same directory as
+      # this yaml and uncomment the following line and use compose to restart
+      # the mediawiki service
       # - ./LocalSettings.php:/var/www/html/LocalSettings.php
   mariadb:
-    image: mariadb:latest
+    build: ./Docker/MariaDb
     ports:
       - 3306:3306
     volumes:
       - mariadb_data:/var/lib/mysql
+    restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=
       - MYSQL_DATABASE=mediawiki
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.5.4
