@@ -5,7 +5,7 @@ services:
     build: ./Docker/Mediawiki
     restart: always
     ports:
-      - 8001:80
+      - 80:80
     extra_hosts:
       - dockerhost:168.119.51.65
     depends_on:
