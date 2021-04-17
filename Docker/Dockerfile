@@ -79,6 +79,14 @@ RUN cd /var/www/html/extensions \
     && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-ExternalData.git \
     && mv mediawiki-extensions-ExternalData ExternalData
 
+# Load Approved Revs extension via Git
+RUN cd /var/www/html/extensions \
+    && git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/ApprovedRevs.git
+
+# Load IDProvider extension via Git
+RUN cd /var/www/html/extensions \
+    && git clone https://github.com/gesinn-it/IDProvider.git
+
 # Load LinkedWiki extension via Git
 RUN cd /var/www/html/extensions \
     && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-LinkedWiki.git \
@@ -89,7 +97,8 @@ RUN cd /var/www/html/extensions \
     && apt update \
     && apt -y install yarn \
     && cd LinkedWiki \
-    && yarn install --production=true
+    && yarn install --production=true \
+    && composer install --no-dev
 
 # Load Alcuin extension via Composer
 # RUN composer clear-cache && composer require soital/alcuin:dev-master
