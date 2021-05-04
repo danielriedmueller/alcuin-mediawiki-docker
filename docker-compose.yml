@@ -6,14 +6,14 @@ services:
     restart: always
     ports:
       - 80:80
-    extra_hosts:
-      - dockerhost:168.119.51.65
     depends_on:
       - mariadb
+      - fuseki
       - elasticsearch
     working_dir: /var/www/html
     links:
       - mariadb
+      - fuseki
     volumes:
       - ./assets:/var/www/html/resources/assets
       # After initial setup, download LocalSettings.php to the same directory as
@@ -38,7 +38,7 @@ services:
       ES_JAVA_OPTS: "-Xms512m -Xmx512m"
       discovery.type: single-node
   fuseki:
-    command: [ "--update", "--loc", "databases/DB2", "/ds" ]
+    command: [ "--update", "--loc", "databases/fuseki", "/fuseki" ]
     build: ./Docker/Fuseki
     image: fuseki
     ports:

@@ -91,6 +91,11 @@ RUN cd /var/www/html/extensions \
 RUN cd /var/www/html/extensions \
     && git clone https://github.com/danielriedmueller/SemanticResultFormats.git
 
+# Load UrlGetParameters extension via Git
+RUN cd /var/www/html/extensions \
+    && git clone -b REL1_36 https://github.com/wikimedia/mediawiki-extensions-UrlGetParameters.git \
+    && mv mediawiki-extensions-UrlGetParameters UrlGetParameters
+
 # Load LinkedWiki extension via Git
 RUN cd /var/www/html/extensions \
     && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-LinkedWiki.git \
@@ -111,4 +116,6 @@ RUN composer clearcache \
     && cd /var/www/html/extensions/Alcuin \
     && git pull \
     && cd /var/www/html/ \
+    && composer update \
+    && cd /var/www/html/extensions/SemanticResultFormats \
     && composer update

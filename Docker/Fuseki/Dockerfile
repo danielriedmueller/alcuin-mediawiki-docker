@@ -19,7 +19,7 @@
 
 ARG OPENJDK_VERSION=14
 ARG ALPINE_VERSION=3.12.0
-ARG JENA_VERSION=""
+ARG JENA_VERSION=4.0.0
 
 # Internal, passed between stages.
 ARG FUSEKI_DIR=/fuseki
@@ -104,7 +104,7 @@ RUN \
 ## Default environment variables.
 ENV \
     JAVA_HOME=${JAVA_MINIMAL}           \
-    JAVA_OPTIONS="-Xmx2048m -Xms2048m"  \
+    JAVA_OPTIONS="-Xmx8192m -Xms8192m"  \
     JENA_VERSION=${JENA_VERSION}        \
     FUSEKI_JAR="${FUSEKI_JAR}"          \
     FUSEKI_DIR="${FUSEKI_DIR}"

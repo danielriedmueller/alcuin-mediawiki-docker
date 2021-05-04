@@ -225,7 +225,6 @@ docker-compose exec mediawiki php extensions/CirrusSearch/maintenance/UpdateSugg
 - docker cp alcuin_mediawiki_1:/var/www/html/extensions extensions/
 - docker cp alcuin_mediawiki_1:/var/www/html/. .
 
-
 composer config minimum-stability dev
 
 #### PageForms bugfix 
