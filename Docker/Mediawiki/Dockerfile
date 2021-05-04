@@ -87,6 +87,10 @@ RUN cd /var/www/html/extensions \
 RUN cd /var/www/html/extensions \
     && git clone https://github.com/gesinn-it/IDProvider.git
 
+# Load SemanticResultFormats extension via Git
+RUN cd /var/www/html/extensions \
+    && git clone https://github.com/danielriedmueller/SemanticResultFormats.git
+
 # Load LinkedWiki extension via Git
 RUN cd /var/www/html/extensions \
     && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-LinkedWiki.git \

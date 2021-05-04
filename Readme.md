@@ -188,6 +188,7 @@ php maintenance/runJobs.php
 
 ### Fuseki starten
 <pre>
+in fuseki-server: JVM_ARGS=${JVM_ARGS:--Xmx8G} (auf 8Gb Ram erhöhen)
 screen
 ./fuseki-server --update --port=3030 --loc=/home/alcuin-mediawiki-docker/fuseki /fuseki
 </pre>
