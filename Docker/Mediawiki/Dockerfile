@@ -98,7 +98,7 @@ RUN cd /var/www/html/extensions \
 
 # Load LinkedWiki extension via Git
 RUN cd /var/www/html/extensions \
-    && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-LinkedWiki.git \
+    && git clone -b https://github.com/wikimedia/mediawiki-extensions-LinkedWiki.git \
     && mv mediawiki-extensions-LinkedWiki LinkedWiki \
     && apt -y install gnupg \
     && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
