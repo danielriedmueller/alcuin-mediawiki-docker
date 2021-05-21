@@ -59,6 +59,10 @@ RUN cd /var/www/html/extensions \
 RUN cd /var/www/html/extensions \
     && git clone https://github.com/danielriedmueller/Network.git
 
+# Load ModernTimeline extension fork via Git
+RUN cd /var/www/html/extensions \
+    && git clone https://github.com/danielriedmueller/ModernTimeline.git
+
 # Load Variables extension fork via Git
 RUN cd /var/www/html/extensions \
     && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-Variables.git \
@@ -104,10 +108,7 @@ RUN cd /var/www/html/extensions \
     && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt update \
-    && apt -y install yarn \
-    && cd LinkedWiki \
-    && yarn install --production=true \
-    && composer install --no-dev
+    && apt -y install yarn
 
 # Load Alcuin extension via Composer
 # RUN composer clear-cache && composer require soital/alcuin:dev-master

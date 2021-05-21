@@ -6,10 +6,9 @@ services:
     restart: always
     ports:
       - 8001:80
-    extra_hosts:
-      - dockerhost:168.119.51.65
     depends_on:
       - mariadb
+      - fuseki
       - elasticsearch
     working_dir: /var/www/html
     links:
@@ -24,7 +23,7 @@ services:
       - mariadb_data:/var/lib/mysql
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=
       - MYSQL_DATABASE=mediawiki
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.5.4
@@ -34,7 +33,7 @@ services:
       ES_JAVA_OPTS: "-Xms512m -Xmx512m"
       discovery.type: single-node
   fuseki:
-    command: [ "--update", "--loc", "databases/DB2", "/ds" ]
+    command: [ "--update", "--loc", "databases/fuseki", "/fuseki" ]
     build: ./Docker/Fuseki
     image: fuseki
     ports:

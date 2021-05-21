@@ -186,12 +186,9 @@ maintenance/update.php --quick
 php maintenance/runJobs.php
 </pre>
 
-### Fuseki starten
-<pre>
-in fuseki-server: JVM_ARGS=${JVM_ARGS:--Xmx8G} (auf 8Gb Ram erhöhen)
-screen
-./fuseki-server --update --port=3030 --loc=/home/alcuin-mediawiki-docker/fuseki /fuseki
-</pre>
+### Fuseki
+Verzeichnis databases/fuseki muss vorhanden sein
+sudo chmod -R 777 databases/
 
 #### Elasticsearch einrichten
 <pre>
