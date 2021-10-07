@@ -45,12 +45,12 @@ RUN cd /var/www/html/extensions \
 
 # Load ShortDescription extension via Git
 #RUN cd /var/www/html/extensions \
-#    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-ShortDescription.git \
+#    && git clone --branch REL1_36 https://github.com/wikimedia/mediawiki-extensions-ShortDescription.git \
 #    && mv mediawiki-extensions-ShortDescription ShortDescription
 
 # Load TinyMce extension via Git
 #RUN cd /var/www/html/extensions \
-#    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-TinyMCE.git \
+#    && git clone --branch REL1_36 https://github.com/wikimedia/mediawiki-extensions-TinyMCE.git \
 #    && mv mediawiki-extensions-TinyMCE TinyMCE
 
 # Load SemanticDrilldown extension via Git
@@ -77,7 +77,7 @@ RUN cd /var/www/html/extensions \
 
 # Load NoTitle extension via Git
 #RUN cd /var/www/html/extensions \
-#    && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-NoTitle.git \
+#    && git clone -b REL1_36 https://github.com/wikimedia/mediawiki-extensions-NoTitle.git \
 #    && mv mediawiki-extensions-NoTitle NoTitle
 
 # Load ExternalData extension via Git
@@ -115,7 +115,7 @@ RUN cd /var/www/html/extensions \
 # Load Alcuin extension via Composer
 RUN composer clear-cache \
     && composer update \
-    && composer require soital/alcuin \
+    && composer require soital/alcuin:0.0.2 \
     && cd /var/www/html/ \
     && composer update \
     && cd /var/www/html/extensions/SemanticResultFormats \
