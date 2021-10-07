@@ -1,4 +1,4 @@
-FROM mediawiki:latest
+FROM mediawiki:1.36.2
 
 # Install php extensions
 RUN apt-get update && apt-get install -y \
@@ -21,25 +21,26 @@ RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --version=1.
 # Load DisplayTitle, PageForms and PageSchemas extension via Git
 RUN cd /var/www/html/extensions \
     && git clone https://github.com/danielriedmueller/PageForms.git \
-    && git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/PageSchemas.git \
-    && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-DisplayTitle.git \
+    && git clone -b REL1_36 https://github.com/wikimedia/mediawiki-extensions-PageSchemas.git \
+    && mv mediawiki-extensions-PageSchemas PageSchemas \
+    && git clone -b REL1_36 https://github.com/wikimedia/mediawiki-extensions-DisplayTitle.git \
     && mv mediawiki-extensions-DisplayTitle DisplayTitle
 
 # Load Elastica extension extension via Git
 RUN cd /var/www/html/extensions \
-    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-Elastica.git \
+    && git clone --branch REL1_36 https://github.com/wikimedia/mediawiki-extensions-Elastica.git \
     && mv mediawiki-extensions-Elastica Elastica \
     && cd Elastica \
     && composer install --no-dev
 
 # Load CirrusSearch extension via Git
 RUN cd /var/www/html/extensions \
-    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-CirrusSearch.git \
+    && git clone --branch REL1_36 https://github.com/wikimedia/mediawiki-extensions-CirrusSearch.git \
     && mv mediawiki-extensions-CirrusSearch CirrusSearch
 
 # Load ParserFunctions extension via Git
 RUN cd /var/www/html/extensions \
-    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-ParserFunctions.git \
+    && git clone --branch REL1_36 https://github.com/wikimedia/mediawiki-extensions-ParserFunctions.git \
     && mv mediawiki-extensions-ParserFunctions ParserFunctions
 
 # Load ShortDescription extension via Git
@@ -53,12 +54,12 @@ RUN cd /var/www/html/extensions \
 #    && mv mediawiki-extensions-TinyMCE TinyMCE
 
 # Load SemanticDrilldown extension via Git
-RUN cd /var/www/html/extensions \
-    && git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/SemanticDrilldown.git
+#RUN cd /var/www/html/extensions \
+#    && git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/SemanticDrilldown.git
 
 # Load Network extension fork via Git
 RUN cd /var/www/html/extensions \
-    && git clone https://github.com/danielriedmueller/Network.git
+    && git clone https://github.com/ProfessionalWiki/Network.git
 
 # Load ModernTimeline extension fork via Git
 RUN cd /var/www/html/extensions \
@@ -66,12 +67,12 @@ RUN cd /var/www/html/extensions \
 
 # Load Variables extension fork via Git
 RUN cd /var/www/html/extensions \
-    && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-Variables.git \
+    && git clone -b REL1_36 https://github.com/wikimedia/mediawiki-extensions-Variables.git \
     && mv mediawiki-extensions-Variables Variables
 
 # Load Tab extension via Git
 RUN cd /var/www/html/extensions \
-    && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-Tabs.git \
+    && git clone -b REL1_36 https://github.com/wikimedia/mediawiki-extensions-Tabs.git \
     && mv mediawiki-extensions-Tabs Tabs
 
 # Load NoTitle extension via Git
@@ -81,7 +82,7 @@ RUN cd /var/www/html/extensions \
 
 # Load ExternalData extension via Git
 RUN cd /var/www/html/extensions \
-    && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-ExternalData.git \
+    && git clone -b REL1_36 https://github.com/wikimedia/mediawiki-extensions-ExternalData.git \
     && mv mediawiki-extensions-ExternalData ExternalData
 
 # Load Approved Revs extension via Git
@@ -103,7 +104,7 @@ RUN cd /var/www/html/extensions \
 
 # Load LinkedWiki extension via Git
 RUN cd /var/www/html/extensions \
-    && git clone https://github.com/wikimedia/mediawiki-extensions-LinkedWiki.git \
+    && git clone -b REL1_36 https://github.com/wikimedia/mediawiki-extensions-LinkedWiki.git \
     && mv mediawiki-extensions-LinkedWiki LinkedWiki \
     && apt -y install gnupg \
     && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
@@ -112,11 +113,9 @@ RUN cd /var/www/html/extensions \
     && apt -y install yarn
 
 # Load Alcuin extension via Composer
-# RUN composer clear-cache && composer require soital/alcuin:dev-master
-RUN composer clearcache \
-    && composer require soital/alcuin:dev-master \
-    && cd /var/www/html/extensions/Alcuin \
-    && git pull \
+RUN composer clear-cache \
+    && composer update \
+    && composer require soital/alcuin \
     && cd /var/www/html/ \
     && composer update \
     && cd /var/www/html/extensions/SemanticResultFormats \
