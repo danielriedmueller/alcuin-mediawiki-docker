@@ -4,6 +4,7 @@ FROM mediawiki:latest
 RUN apt-get update && apt-get install -y \
         libzip-dev \
         zip \
+        nano \
   && docker-php-ext-install zip
 
 # Install Xdebug
@@ -119,4 +120,7 @@ RUN composer clearcache \
     && cd /var/www/html/ \
     && composer update \
     && cd /var/www/html/extensions/SemanticResultFormats \
-    && composer update
+    && composer update \
+    && cd /var/www/html/extensions/LinkedWiki \
+    && composer install \
+    && yarn install

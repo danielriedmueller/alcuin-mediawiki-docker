@@ -6,13 +6,17 @@ docker-compose up --build -d
 </pre>
 - Konfiguration in der Weboberflaeche (http://localhost:8001/mw-config)
 - LocalSettings.php herunterladen und in Projektverzeichnis speichern
-- LocalSettings.php anpassen
+- LocalSettings.php anpassen (inkl. richtiger host in enableSemantics)
 - Volumes option in docker-compose.yml einkommentieren (- ./LocalSettings.php:/var/www/html/LocalSettings.php)
 - Alternativ:
     - docker cp alcuin_mediawiki_1:/var/www/html/. .
     - volumes option: - .:/var/www/html 
 - docker-compose down und docker-compose up --build -d
-- docker-compose exec mediawiki maintenance/update.php --quick
+- docker-compose exec mediawiki bash
+- php maintenance/update.php --quick
+- cd extension/LinkedWiki
+- nano extension.json, delete "resources/bootstrap/dist/bootstrap.light.min.css" 
+
 
 #### Datenbank Konfiguration
 - Server: mariadb
