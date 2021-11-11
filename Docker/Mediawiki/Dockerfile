@@ -115,7 +115,7 @@ RUN cd /var/www/html/extensions \
 # Load Alcuin extension via Composer
 RUN composer clear-cache \
     && composer update \
-    && composer require soital/alcuin:0.0.2 \
+    && composer require soital/alcuin "dev-master" \
     && cd /var/www/html/ \
     && composer update \
     && cd /var/www/html/extensions/SemanticResultFormats \
