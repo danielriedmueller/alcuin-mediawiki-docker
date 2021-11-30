@@ -1,6 +1,7 @@
 Alcuin
 ===============
 ## Installation
+In docker-compose.yml Benutzername und Passwort fuer mariadb vergeben
 <pre>
 docker-compose up --build -d
 </pre>
@@ -15,32 +16,35 @@ docker-compose up --build -d
 - docker-compose exec mediawiki bash
 - php maintenance/update.php --quick
 - cd extension/LinkedWiki
-- nano extension.json, delete "resources/bootstrap/dist/bootstrap.light.min.css" 
-
-
+  - nano extension.json, delete "resources/bootstrap/dist/bootstrap.light.min.css"
+- cd extension/ModernTimeline
+  - composer install
+  
 #### Datenbank Konfiguration
 - Server: mariadb
 - Datenbank: mediawiki
-- root
-- root
-
-#### Mediawiki Konfiguration
-- admin
-- adminpassword
 
 #### LocalSettings.php Anpassungen
 <pre>
-wfLoadSkin( 'Vector' );
+# Enabled skins.
+# The following skins were automatically enabled:
 wfLoadSkin( 'chameleon' );
+wfLoadSkin( 'Vector' );
+
+# End of automatically generated settings.
+# Add more configuration options below.
+enableSemantics('localhost');
+
 $wgDefaultSkin = "chameleon";
+wfLoadExtension( 'DisplayTitle' );
 wfLoadExtension( 'LinkedWiki' );
 wfLoadExtension( 'Bootstrap' );
 wfLoadExtension( 'ParserFunctions' );
 wfLoadExtension( 'Alcuin' );
-wfLoadExtension( 'DisplayTitle' );
 wfLoadExtension( 'Elastica' );
 wfLoadExtension( 'PageForms' );
 wfLoadExtension( 'PageSchemas' );
+wfLoadExtension( 'SemanticFormsSelect' );
 wfLoadExtension( 'CirrusSearch' );
 wfLoadExtension( 'Network' );
 wfLoadExtension( 'SemanticCite' );
@@ -49,22 +53,20 @@ wfLoadExtension( 'Variables' );
 wfLoadExtension( 'SemanticResultFormats' );
 wfLoadExtension( 'Tabs' );
 wfLoadExtension( 'ExternalData' );
-
-# End of automatically generated settings.
-# Add more configuration options below.
-enableSemantics('alcuin.soital.de');
+wfLoadExtension( 'ApprovedRevs' );
+wfLoadExtension( 'ModernTimeline' );
+wfLoadExtension( 'UrlGetParameters' );
 
 $egChameleonLayoutFile= __DIR__ . '/extensions/Alcuin/chameleon/layouts/clean.xml';
 $egChameleonExternalStyleModules = [
-    __DIR__ . '/extensions/Alcuin/resources/scss/style.scss' => 'afterMain',
-    __DIR__ . '/extensions/Alcuin/resources/scss/variables.scss' => 'afterVariables',
+__DIR__ . '/extensions/Alcuin/resources/scss/style.scss' => 'afterMain',
+__DIR__ . '/extensions/Alcuin/resources/scss/variables.scss' => 'afterVariables',
 ];
 $egChameleonExternalStyleVariables = [
-    'container-max-widths' => '(sm: 540px, md: 720px, lg: 960px, xl: 1920px)'
+'container-max-widths' => '(sm: 540px, md: 720px, lg: 960px, xl: 1920px)'
 ];
 
-require_once "$IP/extensions/SemanticDrilldown/SemanticDrilldown.php";
-
+$wgAllowDisplayTitle = true;
 $wgRestrictDisplayTitle = false;
 $wgPageFormsUseDisplayTitle = true;
 
@@ -73,6 +75,13 @@ $wgDisableSearchUpdate = false;
 $wgCirrusSearchServers = [ 'elasticsearch' ];
 $wgCirrusSearchUseCompletionSuggester = 'yes';
 $wgCirrusSearchIndexBaseName = 'mediawiki';
+
+$smwgMainCacheType=CACHE_NONE;
+$smwgCacheType=CACHE_NONE;
+$smwgQueryResultCacheType=CACHE_NONE;
+$wgParserCacheType=CACHE_NONE;
+$wgEnableParserCache = false;
+$wgCachePages = false;
 
 $wgShowExceptionDetails = true;
 $wgShowDBErrorBacktrace = true;
@@ -86,6 +95,7 @@ $wgGroupPermissions['admin']['smw-admin'] = true;
 $wgGroupPermissions['admin']['smw-pageedit'] = true;
 $wgGroupPermissions['admin']['smw-patternedit'] = true;
 $wgGroupPermissions['admin']['smw-schemaedit'] = true;
+$wgGroupPermissions['user']['approverevisions'] = true;
 
 $egScssCacheType = CACHE_NONE;
 $wgPageFormsFormCacheType = CACHE_NONE;
@@ -94,26 +104,26 @@ $smwgChangePropagationProtection = false;
 
 // Exclude Property NS
 $wgPageNetworkExcludedNamespaces = [102];
-$wgPageNetworkExcludeCategories = ['Event', 'WorkPart'];
+$wgPageNetworkExcludeCategories = ['Event','WorkAuthorshipReference'];
 
 // Supported shapes: "ellipse", "box", "circle", "database", "diamond", "dot", "square", "star", "text", "triangle", "triangleDown", "hexagon"
 $wgPageNetworkCategoriesOption = [
-    'Work' => [
-        'shape' => 'box',
-        'color' => '#e63946'
-    ],
-    'Person' => [
-        'shape' => 'ellipse',
-        'color' => '#f1faee'
-    ],
-    'Edition' => [
-        'shape' => 'hexagon',
-        'color' => '#a8dadc'
-    ],
-    'Manifestation' => [
-        'shape' => 'diamond',
-        'color' => '#1d3557'
-    ]
+'Work' => [
+'shape' => 'box',
+'color' => '#e63946'
+],
+'Person' => [
+'shape' => 'ellipse',
+'color' => '#ec6200'
+],
+'Edition' => [
+'shape' => 'hexagon',
+'color' => '#a8dadc'
+],
+'Manifestation' => [
+'shape' => 'diamond',
+'color' => '#1d3557'
+]
 ];
 $egMapsDefaultService = 'leaflet';
 
@@ -122,28 +132,33 @@ $srfgArrayPropSep  = "|";
 $srfgArrayManySep  = "|";
 
 $wgPFEnableStringFunctions = true;
+$wgPageFormsLinkAllRedLinksToForms = true;
 
 $smwgDefaultStore = 'SMWSparqlStore';
 $smwgSparqlRepositoryConnector = 'fuseki';
-$smwgSparqlQueryEndpoint = 'http://dockerhost:3030/fuseki/query';
-$smwgSparqlUpdateEndpoint = 'http://dockerhost:3030/fuseki/update';
+$smwgSparqlQueryEndpoint = 'fuseki:3030/fuseki/query';
+$smwgSparqlUpdateEndpoint = 'fuseki:3030/fuseki/update';
 $smwgSparqlDataEndpoint = '';
 
 $wgLinkedWikiConfigSPARQLServices["fuseki"] = array(
-        "debug" => true,
-        "isReadOnly" => false,
-        "typeRDFDatabase" => "fuseki",
-        "endpointRead" => "http://alcuin.soital.de:3030/fuseki/sparql",
-        "endpointWrite" => "http://alcuin.soital.de:3030/fuseki/update",
-        "HTTPMethodForRead" => "GET",
-        "HTTPMethodForWrite" => "POST"
+"debug" => true,
+"isReadOnly" => false,
+"typeRDFDatabase" => "fuseki",
+"endpointRead" => "http://alcuin.soital.de:3030/fuseki/sparql",
+"endpointWrite" => "http://alcuin.soital.de:3030/fuseki/update",
+"HTTPMethodForRead" => "GET",
+"HTTPMethodForWrite" => "POST",
 );
+
 $wgLinkedWikiSPARQLServiceByDefault= "fuseki";
 $wgLinkedWikiSPARQLServiceSaveDataOfWiki= "fuseki";
 
-$wgRawHtml = true;
 $wgMemoryLimit = "1G";
-
+$wgAllowExternalImages = true;
+$wgDisplayTitleHideSubtitle = true;
+$egApprovedRevsAutomaticApprovals = false;
+$smwgQMaxInlineLimit = 5000;
+$edgExternalValueVerbose = false;
 </pre>
 
 ### Linked Wiki Anpassung

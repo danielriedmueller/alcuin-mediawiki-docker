@@ -28,8 +28,10 @@ services:
       - mariadb_data:/var/lib/mysql
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=
-      - MYSQL_DATABASE=mediawiki
+      MYSQL_DATABASE: mediawiki
+      MYSQL_USER:
+      MYSQL_PASSWORD:
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.5.4
     volumes:

@@ -20,7 +20,8 @@ RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --version=1.
 
 # Load DisplayTitle, PageForms and PageSchemas extension via Git
 RUN cd /var/www/html/extensions \
-    && git clone https://github.com/danielriedmueller/PageForms.git \
+    && git clone https://github.com/wikimedia/mediawiki-extensions-PageForms.git \
+    && mv mediawiki-extensions-PageForms PageForms \
     && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-PageSchemas.git \
     && mv mediawiki-extensions-PageSchemas PageSchemas \
     && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-DisplayTitle.git \
@@ -89,17 +90,13 @@ RUN cd /var/www/html/extensions \
 RUN cd /var/www/html/extensions \
     && git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/ApprovedRevs.git
 
-# Load IDProvider extension via Git
-RUN cd /var/www/html/extensions \
-    && git clone https://github.com/gesinn-it/IDProvider.git
-
 # Load SemanticResultFormats extension via Git
 RUN cd /var/www/html/extensions \
     && git clone https://github.com/danielriedmueller/SemanticResultFormats.git
 
 # Load UrlGetParameters extension via Git
 RUN cd /var/www/html/extensions \
-    && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-UrlGetParameters.git \
+    && git clone -b REL1_36 https://github.com/wikimedia/mediawiki-extensions-UrlGetParameters.git \
     && mv mediawiki-extensions-UrlGetParameters UrlGetParameters
 
 # Load LinkedWiki extension via Git
@@ -115,7 +112,7 @@ RUN cd /var/www/html/extensions \
 # Load Alcuin extension via Composer
 RUN composer clear-cache \
     && composer update \
-    && composer require soital/alcuin "dev-master" \
+    && composer require soital/alcuin "0.0.2" \
     && cd /var/www/html/ \
     && composer update \
     && cd /var/www/html/extensions/SemanticResultFormats \
