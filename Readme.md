@@ -2,6 +2,7 @@ Alcuin
 ===============
 ## Installation
 In docker-compose.yml Benutzername und Passwort fuer mariadb vergeben
+Verzeichnis databases/fuseki muss vorhanden und beschreibbar sein  - sudo chmod -R 777 databases/
 <pre>
 docker-compose up --build -d
 </pre>
@@ -17,6 +18,8 @@ docker-compose up --build -d
 - php maintenance/update.php --quick
 - cd extension/LinkedWiki
   - nano extension.json, delete "resources/bootstrap/dist/bootstrap.light.min.css"
+  - ggf. composer install und yarn install
+    - wenn Node Version zu gering ist: https://phoenixnap.com/kb/update-node-js-version
 - cd extension/ModernTimeline
   - composer install
   
@@ -26,26 +29,17 @@ docker-compose up --build -d
 
 #### LocalSettings.php Anpassungen
 <pre>
-# Enabled skins.
-# The following skins were automatically enabled:
 wfLoadSkin( 'chameleon' );
-wfLoadSkin( 'Vector' );
-
-# End of automatically generated settings.
-# Add more configuration options below.
-enableSemantics('localhost');
-
 $wgDefaultSkin = "chameleon";
+
 wfLoadExtension( 'DisplayTitle' );
 wfLoadExtension( 'LinkedWiki' );
 wfLoadExtension( 'Bootstrap' );
 wfLoadExtension( 'ParserFunctions' );
 wfLoadExtension( 'Alcuin' );
-wfLoadExtension( 'Elastica' );
 wfLoadExtension( 'PageForms' );
 wfLoadExtension( 'PageSchemas' );
 wfLoadExtension( 'SemanticFormsSelect' );
-wfLoadExtension( 'CirrusSearch' );
 wfLoadExtension( 'Network' );
 wfLoadExtension( 'SemanticCite' );
 wfLoadExtension( 'Maps' );
@@ -56,25 +50,25 @@ wfLoadExtension( 'ExternalData' );
 wfLoadExtension( 'ApprovedRevs' );
 wfLoadExtension( 'ModernTimeline' );
 wfLoadExtension( 'UrlGetParameters' );
+wfLoadExtension( 'HeaderTabs' );
+
+#Mit verwendeten Host ersetzen
+enableSemantics('alcuin.soital.de');
 
 $egChameleonLayoutFile= __DIR__ . '/extensions/Alcuin/chameleon/layouts/clean.xml';
 $egChameleonExternalStyleModules = [
-__DIR__ . '/extensions/Alcuin/resources/scss/style.scss' => 'afterMain',
-__DIR__ . '/extensions/Alcuin/resources/scss/variables.scss' => 'afterVariables',
+    __DIR__ . '/extensions/Alcuin/resources/scss/style.scss' => 'afterMain',
+    __DIR__ . '/extensions/Alcuin/resources/scss/variables.scss' => 'afterVariables',
 ];
 $egChameleonExternalStyleVariables = [
-'container-max-widths' => '(sm: 540px, md: 720px, lg: 960px, xl: 1920px)'
+    'container-max-widths' => '(sm: 540px, md: 720px, lg: 960px, xl: 1920px)'
 ];
+
+require_once "$IP/extensions/SemanticDrilldown/SemanticDrilldown.php";
 
 $wgAllowDisplayTitle = true;
 $wgRestrictDisplayTitle = false;
-$wgPageFormsUseDisplayTitle = true;
-
-$wgSearchType = 'CirrusSearch';
-$wgDisableSearchUpdate = false;
-$wgCirrusSearchServers = [ 'elasticsearch' ];
-$wgCirrusSearchUseCompletionSuggester = 'yes';
-$wgCirrusSearchIndexBaseName = 'mediawiki';
+$wgPageFormsUseDisplayTitle = false;
 
 $smwgMainCacheType=CACHE_NONE;
 $smwgCacheType=CACHE_NONE;
@@ -83,8 +77,8 @@ $wgParserCacheType=CACHE_NONE;
 $wgEnableParserCache = false;
 $wgCachePages = false;
 
-$wgShowExceptionDetails = true;
-$wgShowDBErrorBacktrace = true;
+$wgShowExceptionDetails = false;
+$wgShowDBErrorBacktrace = false;
 
 $wgGroupPermissions['user']['generatepages'] = true;
 $wgGroupPermissions['*']['edit'] = false;
@@ -108,22 +102,22 @@ $wgPageNetworkExcludeCategories = ['Event','WorkAuthorshipReference'];
 
 // Supported shapes: "ellipse", "box", "circle", "database", "diamond", "dot", "square", "star", "text", "triangle", "triangleDown", "hexagon"
 $wgPageNetworkCategoriesOption = [
-'Work' => [
-'shape' => 'box',
-'color' => '#e63946'
-],
-'Person' => [
-'shape' => 'ellipse',
-'color' => '#ec6200'
-],
-'Edition' => [
-'shape' => 'hexagon',
-'color' => '#a8dadc'
-],
-'Manifestation' => [
-'shape' => 'diamond',
-'color' => '#1d3557'
-]
+    'Work' => [
+        'shape' => 'box',
+        'color' => '#e63946'
+    ],
+    'Person' => [
+        'shape' => 'ellipse',
+        'color' => '#ec6200'
+    ],
+    'EditedText' => [
+        'shape' => 'hexagon',
+        'color' => '#a8dadc'
+    ],
+    'Manifestation' => [
+        'shape' => 'diamond',
+        'color' => '#1d3557'
+    ]
 ];
 $egMapsDefaultService = 'leaflet';
 
@@ -140,14 +134,15 @@ $smwgSparqlQueryEndpoint = 'fuseki:3030/fuseki/query';
 $smwgSparqlUpdateEndpoint = 'fuseki:3030/fuseki/update';
 $smwgSparqlDataEndpoint = '';
 
+#Mit verwendeten Host ersetzen
 $wgLinkedWikiConfigSPARQLServices["fuseki"] = array(
-"debug" => true,
-"isReadOnly" => false,
-"typeRDFDatabase" => "fuseki",
-"endpointRead" => "http://alcuin.soital.de:3030/fuseki/sparql",
-"endpointWrite" => "http://alcuin.soital.de:3030/fuseki/update",
-"HTTPMethodForRead" => "GET",
-"HTTPMethodForWrite" => "POST",
+	"debug" => false,
+        "isReadOnly" => false,
+        "typeRDFDatabase" => "fuseki",
+        "endpointRead" => "http://alcuin.soital.de:3030/fuseki/sparql",
+        "endpointWrite" => "http://alcuin.soital.de:3030/fuseki/update",
+        "HTTPMethodForRead" => "GET",
+        "HTTPMethodForWrite" => "POST",
 );
 
 $wgLinkedWikiSPARQLServiceByDefault= "fuseki";
@@ -159,6 +154,10 @@ $wgDisplayTitleHideSubtitle = true;
 $egApprovedRevsAutomaticApprovals = false;
 $smwgQMaxInlineLimit = 5000;
 $edgExternalValueVerbose = false;
+$wgExternalLinkTarget = '_blank';
+$wgShowExceptionDetails = true; 
+$srfgMapProvider='OpenStreetMap.HOT';
+$wgDefaultUserOptions ['editsection'] = false;
 </pre>
 
 ### Linked Wiki Anpassung
@@ -209,59 +208,10 @@ php maintenance/runJobs.php
 Verzeichnis databases/fuseki muss vorhanden sein
 sudo chmod -R 777 databases/
 
-#### Elasticsearch einrichten
-<pre>
-wfLoadExtension( 'CirrusSearch' );
-wfLoadExtension( 'Elastica' );
-
-# Konfiguration
-$wgSearchType = 'CirrusSearch';
-$wgDisableSearchUpdate = false;
-$wgCirrusSearchServers = [ 'elasticsearch' ];
-$wgCirrusSearchUseCompletionSuggester = 'yes';
-$wgCirrusSearchIndexBaseName = 'mediawiki';
-
-# Installs the dependencies for Elastica
-docker-compose exec mediawiki composer --working-dir=/var/www/html/extensions/Elastica install 
-# Configure the search index and populate it with content
-docker-compose exec mediawiki php extensions/CirrusSearch/maintenance/UpdateSearchIndexConfig.php
-docker-compose exec mediawiki php extensions/CirrusSearch/maintenance/ForceSearchIndex.php --skipLinks --indexOnSkip
-docker-compose exec mediawiki php extensions/CirrusSearch/maintenance/ForceSearchIndex.php --skipParse
-# Process the job queue. You need to do this any time you add/update content and want it updated in ElasticSearch
-docker-compose exec mediawiki php maintenance/runJobs.php
-docker-compose exec mediawiki php extensions/CirrusSearch/maintenance/UpdateSuggesterIndex.php
-
-</pre>
-
-#### Elastic search vm memory
-- pactl load-module module-detect
-- sysctl -w vm.max_map_count=262144
-
-#### Extensions bearbeiten
-- docker cp alcuin_mediawiki_1:/var/www/html/extensions extensions/
-- docker cp alcuin_mediawiki_1:/var/www/html/. .
-
-composer config minimum-stability dev
-
-#### PageForms bugfix 
-- https://github.com/danielriedmueller/PageForms.git
-- ext.pf.select2.comobox.js Zeile 169
-<pre>
-else if (Object.keys(data).length !== 0) {
-    for (var key in data) {
-        values.push({
-            id: data[key], text: data[key]
-        });
-    }
-}
-</pre>
-
 #### XML Parser
 - sudo apt install python3-bs4 
 - sudo apt install python3-pip
 - pip install lxml
-
-Page "Utrum_contradictio_sit_maxima_oppositio	" was not imported because the name to which it would be imported is invalid on this wiki.
 
 #### Datenbank Dump
 <pre>
@@ -277,64 +227,8 @@ docker-compose exec mariadb mysqladmin -u root -p create mediawiki
 docker-compose exec -T mariadb mysql -uroot -proot mediawiki < dump_of_wikidb.sql
 </pre>
 
-#### Mediawiki Snippets
-- MediaWikiServices::getInstance()->getParser()->getFreshParser()
-
 #### Transclusion
 {{:{{{1}}}}}
-
-#### Inline query creator of
-<pre>
-{{#arraymaptemplate:{{#ask:
- [[Maker::{{PAGENAME}}]]
-}}|UnorderedListView|,|\n}}
-</pre>
-
-{{#ask:
-[[Creator::{{PAGENAME}}]]
-|?SubjectOf
-|?SubjectOf.PartOf
-|?SubjectOf.Creator
-|format=template
-|template=WorkQueryResult
-|link=none
-}}
-
-Try to use
-
-|link=none
-(see source 1)
-
-this will pass {{{1}}} and {{{2}}} results as raw text to your template
-
-You request becomes :
-
-{{#ask: [[Has citekey::someauthor2019]]
-|?Has reference
-|format=template
-|template=Query Result
-|link=none
-}}
-Then you can use {{{1}}} and {{{2}}} as parameters for a new query.
-
-But, you said that you may have multiple results for the {{{has reference}}} result parameter. So you should use something like an arraymaptemplate (see source 2).
-
-{{#arraymaptemplate:value|template|delimiter|new_delimiter}}
-where 'template' will use each value of the {{{2}}} list in its own request.
-
-### Subquery mit Person -> Work-> Edition -> Druck -> Reprint
-<ul>
-{{#arraymap:{{#ask:[[Creator::{{PAGENAME}}]]|?=#}}|,|x0|<li>Werk: [[x0]]
-    <ul>
-    {{#arraymap:{{#ask:[[IsEditionOf::x0]]|?=#}}|,|x1|<li>Edition: [[x1]]
-        <ul>
-        {{#arraymap:{{#ask:[[IsPrintOf::x1]]|?=#}}|,|x2|<li>Druck: [[x2]]
-            <ul>
-            {{#arraymap:{{#ask:[[IsReprintOf::x2]]|?=#}}|,|x3|<li>RePrint: [[x3]]</li>}}
-            </ul>|}}</li>
-        </ul></li>|}}
-    </ul></li>|}}
-</ul>
 
 #### Form als default Edit: In Kategorieseite
 {{#default_form:Work}}
@@ -347,27 +241,3 @@ $smwgDefaultStore = 'SMWSparqlStore';
 <pre>
 docker-compose exec mediawiki php extension/SemanticMediaWiki/maintenance/rebuildData.php -v
 </pre>
-
-### Templates anpassen:
-{{DISPLAYTITLE:{{{Title}}}}} bei Work, Edition, CommentAristotle, WorkPart
-
-### Nework with Work and Editions
-{{#network:
-{{#ask:
-[[Creator::{{PAGENAME}}]]
-|?=#
-|?HasEdition=#
-|format=array
-|link=none
-}}
-}}
-
-<tr>
-<th>Titel</th>
-<th>Übersetzer</th>
-<th>Editoren</th>
-<th>Manuskripte</th>
-<th>Drucke</th>
-<th>RePrints</th>
-</tr>
-<tr>

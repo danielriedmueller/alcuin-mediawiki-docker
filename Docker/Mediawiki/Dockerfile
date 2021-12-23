@@ -32,15 +32,6 @@ RUN cd /var/www/html/extensions \
     && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-ParserFunctions.git \
     && mv mediawiki-extensions-ParserFunctions ParserFunctions
 
-# Load ShortDescription extension via Git
-#RUN cd /var/www/html/extensions \
-#    && git clone --branch REL1_35 https://github.com/wikimedia/mediawiki-extensions-ShortDescription.git \
-#    && mv mediawiki-extensions-ShortDescription ShortDescription
-
-# Load SemanticDrilldown extension via Git
-#RUN cd /var/www/html/extensions \
-#    && git clone https://gerrit.wikimedia.org/r/mediawiki/extensions/SemanticDrilldown.git
-
 # Load Network extension fork via Git
 RUN cd /var/www/html/extensions \
     && git clone https://github.com/ProfessionalWiki/Network.git
@@ -58,11 +49,6 @@ RUN cd /var/www/html/extensions \
 RUN cd /var/www/html/extensions \
     && git clone -b REL1_35 https://github.com/wikimedia/mediawiki-extensions-Tabs.git \
     && mv mediawiki-extensions-Tabs Tabs
-
-# Load NoTitle extension via Git
-#RUN cd /var/www/html/extensions \
-#    && git clone -b REL1_36 https://github.com/wikimedia/mediawiki-extensions-NoTitle.git \
-#    && mv mediawiki-extensions-NoTitle NoTitle
 
 # Load ExternalData extension via Git
 RUN cd /var/www/html/extensions \
@@ -95,7 +81,7 @@ RUN cd /var/www/html/extensions \
 # Load Alcuin extension via Composer
 RUN composer clear-cache \
     && composer update \
-    && composer require soital/alcuin "0.0.2" \
+    && composer require soital/alcuin "dev-master" \
     && cd /var/www/html/ \
     && composer update \
     && cd /var/www/html/extensions/SemanticResultFormats \
